@@ -1,4 +1,4 @@
-# Accelerator Project "Smart Device"
+# Accelerator Project "Jewellery"
 
 - Node.js v.10.15.3
 - Gulp v4
