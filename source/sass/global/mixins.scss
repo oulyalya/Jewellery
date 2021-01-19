@@ -1,0 +1,79 @@
+@mixin tablet {
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: 0) and (max-width: $mobile-max-width) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin flex($flex-direction) {
+  display: flex;
+  flex-direction: $flex-direction;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+}
+
+@mixin container {
+  position: relative;
+  width: auto;
+  min-width: $desktop-min-width;
+  max-width: $desktop-max-width;
+  margin: 0 auto;
+  padding: 0 $desktop-pads;
+
+  @include tablet {
+    min-width: $tablet-min-width;
+    width: auto;
+    padding: 0 $tablet-pads;
+    overflow-x: hidden;
+  }
+
+  @include mobile {
+    min-width: $mobile-min-width;
+    width: 100%;
+    padding: 0 $mobile-pads;
+    overflow-x: hidden;
+  }
+}
+
+// @mixin font($size, $height, $weight) {
+//   font-family: $font-one;
+//   font-size: $size;
+//   line-height: $height;
+//   font-weight: $weight;
+// }
+
+@mixin hover-effect {
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+    transition: 0.3s ease-in-out;
+    outline: 0 none;
+  }
+
+  &:active {
+    opacity: 0.3;
+    transition: 0.3s ease-in-out;
+  }
+}
