@@ -1,17 +1,23 @@
+@mixin desktop-only {
+  @media (min-width: $tab_max) {
+    @content;
+  }
+}
+
 @mixin tablet {
-  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+  @media (min-width: $tab_min) and (max-width: $tab_max) {
     @content;
   }
 }
 
 @mixin mobile {
-  @media (min-width: 0) and (max-width: $mobile-max-width) {
+  @media (min-width: 0) and (max-width: $mob_max) {
     @content;
   }
 }
 
 @mixin retina {
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+  @media (min-resolution: $retina_dpi), (min-resolution: $retina_dppx) {
     @content;
   }
 }
@@ -37,43 +43,109 @@
 @mixin container {
   position: relative;
   width: auto;
-  min-width: $desktop-min-width;
-  max-width: $desktop-max-width;
+  min-width: $desk_min;
+  max-width: $desk_max;
   margin: 0 auto;
-  padding: 0 $desktop-pads;
+  padding: 0 $desk_pads;
 
   @include tablet {
-    min-width: $tablet-min-width;
+    min-width: $tab_min;
     width: auto;
-    padding: 0 $tablet-pads;
+    padding: 0 $tab_pads;
     overflow-x: hidden;
   }
 
   @include mobile {
-    min-width: $mobile-min-width;
+    min-width: $mob_min;
     width: 100%;
-    padding: 0 $mobile-pads;
+    padding: 0 $mob_pads;
     overflow-x: hidden;
   }
 }
 
-// @mixin font($size, $height, $weight) {
-//   font-family: $font-one;
-//   font-size: $size;
-//   line-height: $height;
-//   font-weight: $weight;
+// Cormorant Garamond
+@mixin font-one($size, $height, $weight) {
+  font-family: $f_one;
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+}
+
+// Cormorant Garamond Italic
+@mixin font-two($size, $height) {
+  font-family: $f_two;
+  font-size: $size;
+  line-height: $height;
+  font-weight: $reg;
+}
+
+// Poppins
+@mixin font-three($size, $height, $weight) {
+  font-family: $f_three;
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+}
+
+@mixin title-one {
+  @include font-one(45px, 1.3, $bold);
+  letter-spacing: 1px;
+  text-align: center;
+
+  @include mobile {
+    font-size: 38px;
+  }
+}
+
+@mixin title-two {
+  margin-bottom: 20px;
+
+  @include font-one(34px, 1.3, $bold);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@mixin title-three {
+  @include font-one(26px, 1.3, $semi);
+}
+
+@mixin bg-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+
+// @mixin hover-effect {
+//   &:hover,
+//   &:focus {
+//     opacity: 0.6;
+//     transition: 0.3s ease-in-out;
+//     outline: 0 none;
+//   }
+
+//   &:active {
+//     opacity: 0.3;
+//     transition: 0.3s ease-in-out;
+//   }
 // }
 
-@mixin hover-effect {
-  &:hover,
-  &:focus {
-    opacity: 0.6;
-    transition: 0.3s ease-in-out;
-    outline: 0 none;
-  }
+@mixin link-subtitle {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding-bottom: 5px;
 
-  &:active {
-    opacity: 0.3;
-    transition: 0.3s ease-in-out;
+  @include font-three(16px, 1.3, $med);
+  color: $c_text;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $c_main;
   }
 }

@@ -1,0 +1,52 @@
+.title-cover {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: $c_main;
+
+  @include bg-img;
+  background-image: url("../img/bg-title-cover-index@1x.jpg");
+
+  @include retina {
+    background-image: url("../img/bg-title-cover-index@2x.jpg");
+  }
+}
+
+.title-cover--index {
+  padding-top: 150px;
+  min-height: 463px;
+
+  @include mobile {
+    padding-top: 165px;
+  }
+}
+
+.title-cover--shadow {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  @include tablet {
+    box-shadow: none;
+  }
+
+  @include mobile {
+    box-shadow: none;
+  }
+}
+
+.title-cover h1 {
+  margin-bottom: -5px;
+
+  @include title-one;
+  color: white;
+}
+
+.title-cover p {
+  margin-top: 0;
+
+  @include font-two(38px, 1.3);
+  color: white;
+  text-align: center;
+
+  @include mobile {
+    font-size: 34px;
+  }
+}

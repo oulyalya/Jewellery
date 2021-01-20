@@ -1,0 +1,14 @@
+.gallery {
+  text-align: center;
+}
+
+.gallery h2 {
+  @include title-two;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery a {
+  @include link-subtitle;
+}

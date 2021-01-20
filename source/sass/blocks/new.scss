@@ -1,0 +1,11 @@
+.new {
+  text-align: center;
+}
+
+.new h2 {
+  @include title-two;
+}
+
+.new a {
+  @include link-subtitle;
+}
