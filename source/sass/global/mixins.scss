@@ -91,6 +91,7 @@
   @include font-one(45px, 1.3, $bold);
   letter-spacing: 1px;
   text-align: center;
+  text-transform: uppercase;
 
   @include mobile {
     font-size: 38px;
@@ -115,19 +116,55 @@
   background-position: 50%;
 }
 
-// @mixin hover-effect {
-//   &:hover,
-//   &:focus {
-//     opacity: 0.6;
-//     transition: 0.3s ease-in-out;
-//     outline: 0 none;
-//   }
+@mixin hover-effect($color) {
+  &:hover,
+  &:focus {
+    transition: 0.3s ease-in-out;
+    outline: 0 none;
+    color: $color;
+  }
 
-//   &:active {
-//     opacity: 0.3;
-//     transition: 0.3s ease-in-out;
-//   }
-// }
+  &:active {
+    opacity: 0.8;
+    transition: 0.3s ease-in-out;
+    color: $color;
+  }
+}
+
+@mixin hover-svg($fill-color, $stroke-color) {
+  &:hover,
+  &:focus {
+    & svg {
+      transition: 0.3s ease-in-out;
+      outline: 0 none;
+      fill: $fill-color;
+      stroke: $stroke-color;
+    }
+  }
+
+  &:active {
+    & svg {
+      opacity: 0.8;
+      transition: 0.3s ease-in-out;
+      fill: $fill-color;
+      stroke: $stroke-color;
+    }
+  }
+}
+
+@mixin hover-opacity {
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+    transition: 0.3s ease-in-out;
+    outline: 0 none;
+  }
+
+  &:active {
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+  }
+}
 
 @mixin link-subtitle {
   position: relative;
@@ -148,4 +185,10 @@
     height: 1px;
     background-color: $c_main;
   }
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

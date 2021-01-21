@@ -1,0 +1,122 @@
+.main-nav__container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @include tablet {
+    padding-top: 15px;
+    padding-bottom: 65px;
+  }
+
+  @include mobile {
+    padding-top: 10px;
+    padding-bottom: 31px;
+  }
+}
+
+.main-nav__search-form {
+  @include desktop-only {
+    display: none;
+  }
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+
+  @include mobile {
+    margin-bottom: 29px;
+  }
+}
+
+.main-nav__list {
+  @include reset-list;
+}
+
+.main-nav__link {
+  display: block;
+  font-weight: $med;
+  color: $c_text;
+
+  @include desktop-only {
+    @include hover-effect($c_main);
+  }
+
+  @include tablet {
+    color: white;
+
+    @include hover-opacity;
+  }
+
+  @include mobile {
+    color: white;
+
+    @include hover-opacity;
+  }
+}
+
+.main-nav__list--primary {
+  @include desktop-only {
+    @include flex(row);
+    justify-content: center;
+  }
+}
+
+.main-nav__link--primary {
+  padding: 0 16px;
+  font-size: 16px;
+
+  @include tablet {
+    margin: 5px 0;
+    padding: 10px 0;
+    font-size: 24px;
+  }
+
+  @include mobile {
+    margin: 5px 0;
+    padding: 10px 0;
+    font-size: 24px;
+  }
+}
+
+.main-nav__list--secondary {
+  @include desktop-only {
+    display: none;
+  }
+
+  @include tablet {
+    padding: 15px 0;
+  }
+
+  @include mobile {
+    padding: 10px 0;
+  }
+}
+
+.main-nav__link--secondary {
+  @include tablet {
+    padding: 11px 0;
+    font-size: 18px;
+  }
+
+  @include mobile {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+}
+
+.main-nav__link--login {
+  @include desktop-only {
+    display: none;
+  }
+
+  @include tablet {
+    margin-top: 7px;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  @include mobile {
+    margin-top: 7px;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+}

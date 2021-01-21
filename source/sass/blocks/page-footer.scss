@@ -1,6 +1,51 @@
 .page-footer {
-  display: block;
   margin-top: auto;
+  padding-top: 85px;
+  padding-bottom: 95px;
   color: white;
   background-color: black;
+}
+
+.page-footer__container {
+  @include flex(row);
+  justify-content: flex-start;
+
+
+  @include tablet {
+  }
+}
+
+.page-footer__signup {
+  max-width: 500px;
+  width: auto;
+  outline: 1px solid red;
+  flex-shrink: 1;
+
+}
+
+.page-footer__nav {
+  outline: 1px solid red;
+
+  @include desktop-only {
+    margin-left: 20px;
+  }
+}
+
+.page-footer__social {
+  max-width: 140px;
+
+  @include desktop-only {
+    margin-left: 20px;
+  }
+
+
+  @include tablet {
+    margin-left: 45px;
+  }
+
+  @include mobile {
+    width: 100%;
+    max-width: none;
+  }
+  outline: 1px solid red;
 }

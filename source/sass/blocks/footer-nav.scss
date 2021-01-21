@@ -1,0 +1,28 @@
+.footer-nav {
+  width: auto;
+  max-width: 390px;
+}
+
+.footer-nav__list {
+  @include reset-list;
+  @include flex(row);
+  justify-content: flex-start;
+}
+
+.footer-nav__item {
+  width: 205px;
+
+  &:nth-child(2n) {
+    outline: 1px solid red;
+    width: 150px;
+    margin-left: auto;
+  }
+}
+
+.footer-nav__link {
+  display: block;
+  padding: 11px 0;
+  color: white;
+
+  @include hover-effect($c_main);
+}

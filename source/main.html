@@ -16,13 +16,101 @@
 <body>
   <object style="display: none;" type="image/svg+xml" data="img/sprite_auto.svg"></object>
 
-  <header class="page-header">
+  <header class="page-header page-header--no-js page-header--nav-open">
+    <div class="page-header__top-wrapper">
+      <div class="page-header__top-container container">
+        <div class="page-header__search">
+          <form class="search-form search-form--on-light-bg" action="#" method="GET">
+            <div class="search-form__bg">
+              <svg preserveAspectRatio="xMidYMid" width="14" height="14">
+                <use xlink:href="img/sprite_auto.svg#icon-search"></use>
+              </svg>
+              <input type="search" placeholder="Type here to search">
+            </div>
+          </form>
+        </div>
+        <button class="page-header__nav-toggle" id="main-nav-toggle">
+          <span class="visually-hidden">Show/hide menu</span>
+          <svg class="page-header__nav-toggle-icon" viewbox="0 0 27 20" preserveAspectRatio="xMidYMid" width="25"
+            height="16">
+            <use xlink:href="img/sprite_auto.svg#icon-hamburger"></use>
+          </svg>
+        </button>
+        <div class="page-header__logo">
+          <a class="page-header__logo-link">
+            <svg class="page-header__logo-img" viewbox="0 0 66 66" preserveAspectRatio="xMidYMid" width="66"
+              height="66">
+              <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="page-header__user">
+          <ul class="page-header__user-list">
+            <li class="page-header__user-item">
+              <a class="page-header__user-link page-header__user-link--login" href="login.html">Login</a>
+            </li>
+            <li class="page-header__user-item">
+              <a class="page-header__user-link page-header__user-link--cart" href="#"><span>Cart 0</span>
+                <svg class="page-header__user-link-icon page-header__user-link-icon--cart"
+                  preserveAspectRatio="xMidYMid" width="18" height="16" viewbox="0 0 22 20">
+                  <use xlink:href="img/sprite_auto.svg#icon-cart"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <nav class="page-header__nav main-nav">
+      <div class="main-nav__container container">
+        <form class="main-nav__search-form search-form search-form--on-dark-bg" method="GET">
+          <div class="search-form__bg">
+            <svg preserveAspectRatio="xMidYMid" width="14" height="14">
+              <use xlink:href="img/sprite_auto.svg#icon-search"></use>
+            </svg>
+            <input type="search">
+          </div>
+        </form>
+
+        <ul class="main-nav__list main-nav__list--primary">
+          <li>
+            <a class="main-nav__link main-nav__link--primary" href="catalog.html">What’s new</a>
+          </li>
+          <li>
+            <a class="main-nav__link main-nav__link--primary" href="catalog.html">Chokers</a>
+          </li>
+          <li>
+            <a class="main-nav__link main-nav__link--primary" href="catalog.html">Necklaces</a>
+          </li>
+          <li>
+            <a class="main-nav__link main-nav__link--primary" href="catalog.html">Rings</a>
+          </li>
+          <li>
+            <a class="main-nav__link main-nav__link--primary" href="catalog.html">Earrings</a>
+          </li>
+        </ul>
+        <ul class="main-nav__list main-nav__list--secondary">
+          <li>
+            <a class="main-nav__link main-nav__link--secondary" href="#">About CH</a>
+          </li>
+          <li>
+            <a class="main-nav__link main-nav__link--secondary" href="#">Stores & Hours</a>
+          </li>
+          <li>
+            <a class="main-nav__link main-nav__link--secondary" href="#">Contact Us</a>
+          </li>
+        </ul>
+        <a class="main-nav__link main-nav__link--login" href="login.html">Login</a>
+      </div>
+    </nav>
   </header>
 
   <main>
+    <h1 class="visually-hidden">Chjewellery shop</h1>
+
     <section class="title-cover title-cover--index title-cover--shadow">
       <div class="container">
-        <h1>PERFECTION</h1>
+        <h2>PERFECTION</h2>
         <p>made to be yours</p>
       </div>
     </section>
@@ -46,7 +134,7 @@
                   <source type="image/webp" srcset="img/img-blog-post-1@1x.webp 1x, img/img-blog-post-1@2x.webp 2x">
                   <!-- 1х: 285px; 2x: 570px -->
                   <img src="img/img-blog-post-1@1x.jpg" alt="Beautiful gold necklace and earrings" width="285"
-                    height="300px" srcset="img/img-blog-post-1@2x.jpg 2x">
+                    height="300" srcset="img/img-blog-post-1@2x.jpg 2x">
                 </picture>
               </div>
               <div class="blog__post-info-wrapper">
@@ -60,7 +148,7 @@
                 <picture>
                   <source type="image/webp" srcset="img/img-blog-post-2@1x.webp 1x, img/img-blog-post-2@2x.webp 2x">
                   <!-- 1х: 285px; 2x: 570px -->
-                  <img src="img/img-blog-post-2@1x.jpg" alt="Jewellery with stones" width="285" height="300px"
+                  <img src="img/img-blog-post-2@1x.jpg" alt="Jewellery with stones" width="285" height="300"
                     srcset="img/img-blog-post-2@2x.jpg 2x">
                 </picture>
               </div>
@@ -77,7 +165,7 @@
                 <picture>
                   <source type="image/webp" srcset="img/img-blog-post-3@1x.webp 1x, img/img-blog-post-3@2x.webp 2x">
                   <!-- 1х: 285px; 2x: 570px -->
-                  <img src="img/img-blog-post-3@1x.jpg" alt="Jewellery on a woman's hands" width="285" height="300px"
+                  <img src="img/img-blog-post-3@1x.jpg" alt="Jewellery on a woman's hands" width="285" height="300"
                     srcset="img/img-blog-post-3@2x.jpg 2x">
                 </picture>
               </div>
@@ -102,17 +190,164 @@
       <div class="container">
         <h2><span>@</span>Chjewellery</h2>
         <a href="#">Follow us</a>
+        <div class="gallery__wrapper">
+          <div class="gallery__photos-wrapper">
+            <div class="gallery__photo-wrapper gallery__photo-wrapper--1">
+              <picture>
+                <source type="image/webp" srcset="img/img-gallery-01@1x.webp 1x, img/img-gallery-01@2x.webp 2x">
+                <!-- 1х: 230px; 2x: 460px -->
+                <img src="img/img-gallery-01@1x.jpg" alt="Chjewellery square earrings" width="230" height="230"
+                  srcset="img/img-gallery-01@2x.jpg 2x">
+              </picture>
+            </div>
+            <div class="gallery__photo-wrapper gallery__photo-wrapper--2">
+              <picture>
+                <source type="image/webp" srcset="img/img-gallery-02@1x.webp 1x, img/img-gallery-02@2x.webp 2x">
+                <!-- 1х: 230px; 2x: 460px -->
+                <img src="img/img-gallery-02@1x.jpg" alt="Chjewellery pendants" width="230" height="154"
+                  srcset="img/img-gallery-02@2x.jpg 2x">
+              </picture>
+            </div>
+          </div>
+          <div class="gallery__photos-wrapper">
+            <div class="gallery__photo-wrapper gallery__photo-wrapper--3">
+              <picture>
+                <source type="image/webp" srcset="img/img-gallery-03@1x.webp 1x, img/img-gallery-03@2x.webp 2x">
+                <!-- 1х: 230px; 2x: 460px -->
+                <img src="img/img-gallery-03@1x.jpg" alt="A woman wearing Chjewellery earrings" width="400" height="414"
+                  srcset="img/img-gallery-03@2x.jpg 2x">
+              </picture>
+            </div>
+          </div>
+          <div class="gallery__photos-wrapper">
+            <div class="gallery__photo-wrapper gallery__photo-wrapper--4">
+              <picture>
+                <source type="image/webp" srcset="img/img-gallery-04@1x.webp 1x, img/img-gallery-04@2x.webp 2x">
+                <!-- 1х: 232px; 2x: 464px -->
+                <img src="img/img-gallery-04@1x.jpg" alt="Gold Chjewellery bracelets" width="232" height="193"
+                  srcset="img/img-gallery-04@2x.jpg 2x">
+              </picture>
+            </div>
+            <div class="gallery__photo-wrapper gallery__photo-wrapper--5">
+              <picture>
+                <source type="image/webp" srcset="img/img-gallery-05@1x.webp 1x, img/img-gallery-05@2x.webp 2x">
+                <!-- 1х: 218px; 2x: 436px -->
+                <img src="img/img-gallery-05@1x.jpg" alt="Some jewellery on a table" width="218" height="191"
+                  srcset="img/img-gallery-05@2x.jpg 2x">
+              </picture>
+            </div>
+          </div>
+          <div class="gallery__photos-wrapper">
+            <div class="gallery__photo-wrapper gallery__photo-wrapper--6">
+              <picture>
+                <source type="image/webp" srcset="img/img-gallery-06@1x.webp 1x, img/img-gallery-06@2x.webp 2x">
+                <!-- 1х: 218px; 2x: 436px -->
+                <img src="img/img-gallery-06@1x.jpg" alt="Chjewellery earrings" width="218" height="191"
+                  srcset="img/img-gallery-05@2x.jpg 2x">
+              </picture>
+            </div>
+            <div class="gallery__photo-wrapper gallery__photo-wrapper--7">
+              <picture>
+                <source type="image/webp" srcset="img/img-gallery-07@1x.webp 1x, img/img-gallery-07@2x.webp 2x">
+                <!-- 1х: 232px; 2x: 464px -->
+                <img src="img/img-gallery-07@1x.jpg" alt="Gold Chjewellery rings" width="232" height="193"
+                  srcset="img/img-gallery-07@2x.jpg 2x">
+              </picture>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="page-footer">
-    <div class="container">
+    <div class="page-footer__container container">
+      <div class="page-footer__signup signup-form">
+        <h2 class="visually-hidden">Subscribe to our newsletter</h2>
+        <p class="signup-form__title">The good stuff in your inbox</p>
+        <p class="signup-form__caption">News and updates from CH. No spam, we promise.</p>
+        <form action="#" method="POST">
+          <div>
+            <input type="email" placeholder="Your E-mail" required>
+            <button type="submit">Sign Up</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="page-footer__nav footer-nav">
+        <ul class="footer-nav__list">
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#">Ordering & Payment</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#">About CH</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#">Terms & Conditions</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#">Stores & Hours</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#">Returns & Exchanges</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#">Jobs</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#">Delivery</a>
+          </li>
+          <li class="footer-nav__item">
+            <a class="footer-nav__link" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="page-footer__social social">
+        <ul class="social__list">
+          <li>
+            <a class="social__link" href="#">
+              <span class="social__icon-wrapper">
+                <svg preserveAspectRatio="xMidYMid" width="10" height="15">
+                  <use xlink:href="img/sprite_auto.svg#icon-fb"></use>
+                </svg>
+              </span>
+              <span class="social__link-title">Facebook</span></a>
+          </li>
+          <li>
+            <a class="social__link" href="#">
+              <span class="social__icon-wrapper">
+                <svg preserveAspectRatio="xMidYMid" width="15" height="15">
+                  <use xlink:href="img/sprite_auto.svg#icon-ig"></use>
+                </svg>
+              </span>
+              <span class="social__link-title">Instagram</span></a>
+          </li>
+          <li>
+            <a class="social__link" href="#">
+              <span class="social__icon-wrapper">
+                <svg preserveAspectRatio="xMidYMid" width="15" height="15">
+                  <use xlink:href="img/sprite_auto.svg#icon-pi"></use>
+                </svg>
+              </span>
+              <span class="social__link-title">Pinterest</span></a>
+          </li>
+          <li>
+            <a class="social__link" href="#">
+              <span class="social__icon-wrapper">
+                <svg preserveAspectRatio="xMidYMid" width="15" height="15">
+                  <use xlink:href="img/sprite_auto.svg#icon-tw"></use>
+                </svg>
+              </span>
+              <span class="social__link-title">Twitter</span></a>
+          </li>
+        </ul>
+      </div>
     </div>
   </footer>
 
   <script src="js/vendor.js"></script>
-  <!-- <script src="js/main.js"></script> -->
+  <script src="js/main.js"></script>
 </body>
 
 </html>

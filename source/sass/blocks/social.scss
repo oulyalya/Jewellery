@@ -1,0 +1,40 @@
+.social__list {
+  @include reset-list;
+
+  @include mobile {
+    @include flex(row);
+    justify-content: flex-start;
+  }
+}
+
+.social__link {
+  display: block;
+  padding: 11px 0;
+  color: white;
+
+  @include hover-effect($c_main);
+}
+
+.social__icon-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  margin-right: 10px;
+  text-align: center;
+
+  @include mobile {
+    margin-right: 0;
+  }
+}
+
+.social svg {
+  fill: white;
+  max-width: 15px;
+  height: 15px;
+}
+
+.social__link-title {
+  @include mobile {
+    display: none;
+  }
+}

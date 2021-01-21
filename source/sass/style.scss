@@ -12,12 +12,20 @@
 // @import "blocks/accordion.scss";
 // @import "blocks/logo.scss";
 @import "blocks/page.scss";
-// @import "blocks/page-header.scss";
+@import "blocks/page-header.scss";
 @import "blocks/page-footer.scss";
+@import "blocks/search-form.scss";
+@import "blocks/main-nav.scss";
+@import "blocks/footer-nav.scss";
+@import "blocks/signup-form.scss";
+@import "blocks/social.scss";
 @import "blocks/title-cover.scss";
 @import "blocks/new.scss";
 @import "blocks/blog.scss";
 @import "blocks/faq.scss";
-@import "blocks/gallery.scss";
-
+// @import "blocks/gallery.scss";
 // @import "blocks/js-styles.scss";
+
+// * {
+//   outline: 1px solid red;
+// }
