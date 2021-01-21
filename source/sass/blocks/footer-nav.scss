@@ -1,22 +1,41 @@
 .footer-nav {
+  @include flex(row);
   width: auto;
   max-width: 390px;
+
+  @include tablet {
+    max-width: 405px;
+  }
+
+  @include mobile {
+    max-width: 460px;
+  }
 }
 
 .footer-nav__list {
   @include reset-list;
   @include flex(row);
   justify-content: flex-start;
-}
 
-.footer-nav__item {
-  width: 205px;
+  &--for-customers {
+    width: 205px;
+  }
 
-  &:nth-child(2n) {
-    outline: 1px solid red;
+  &--info {
     width: 150px;
     margin-left: auto;
   }
+
+  @include mobile {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 18px;
+  }
+}
+
+.footer-nav__item {
+  width: 100%;
 }
 
 .footer-nav__link {
@@ -25,4 +44,8 @@
   color: white;
 
   @include hover-effect($c_main);
+
+  @include mobile {
+    padding: 11px 0 10.5px;
+  }
 }

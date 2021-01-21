@@ -35,6 +35,8 @@
   padding-left: 15px;
   padding-right: 15px;
   margin-right: 15px;
+  
+  @include font-three(14px, 1.3, $med);
   border: 0 none;
   background-color: transparent;
 }
