@@ -26,7 +26,6 @@
   menuToggle.addEventListener('click', toggleMenu);
 })();
 
-
 'use strict';
 
 (function () {

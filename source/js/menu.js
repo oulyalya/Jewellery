@@ -25,4 +25,3 @@
   hideMenu();
   menuToggle.addEventListener('click', toggleMenu);
 })();
-
