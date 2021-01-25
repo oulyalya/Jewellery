@@ -1,0 +1,90 @@
+.double-range {
+  position: relative;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  min-height: max-content;
+  overflow: hidden;
+}
+
+.double-range__controls {
+  padding: 10px 0;
+}
+
+.double-range__scale {
+  position: relative;
+  display: block;
+  height: 2px;
+  background: $c_light;
+}
+
+.double-range__bar {
+  position: relative;
+  left: 26%;
+  display: block;
+  width: 52%;
+  height: 2px;
+  background-color: $c_main;
+}
+
+.double-range__toggle {
+  --double-range-toggle-width: 16px;
+  position: absolute;
+  top: -7.5px;
+
+  display: block;
+  width: var(--double-range-toggle-width);
+  height: var(--double-range-toggle-width);
+
+  background-color: $c_main;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.double-range__toggle:hover {
+  background-color: $c_hover;
+}
+
+.double-range__toggle--min {
+  left: calc(var(--double-range-toggle-width) / (0 - 2));
+}
+
+.double-range__toggle--max {
+  right: calc(var(--double-range-toggle-width) / (0 - 2));
+}
+
+.double-range__price-controls {
+  position: relative;
+
+  @include flex(row);
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 25px;
+}
+
+.double-range__min-price {
+  position: absolute;
+  left: 18.5%;
+  top: 0;
+
+  @include flex(row);
+  flex-wrap: nowrap;
+}
+
+.double-range__max-price {
+  position: absolute;
+  left: 70%;
+  top: 0;
+
+  @include flex(row);
+  flex-wrap: nowrap;
+}
+
+.double-range input {
+  display: inline-block;
+  width: max-content;
+  max-width: 60px;
+  background: none;
+  border: none;
+  outline: none;
+}

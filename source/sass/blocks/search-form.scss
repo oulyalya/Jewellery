@@ -1,6 +1,7 @@
 .search-form__bg {
   position: relative;
   z-index: 10;
+  border: 1px solid transparent;
 
   @include flex(row);
   align-items: center;
@@ -27,6 +28,14 @@
 
 .search-form--on-dark-bg svg {
   fill: white;
+}
+
+.search-form--on-light-bg input {
+  color: $c_text;
+}
+
+.search-form--on-dark-bg input {
+  color: white;
 }
 
 .search-form input[type="search"] {
@@ -65,4 +74,10 @@
     background-color: rgba($c_text-light, 0.05);
     border-radius: 21px;
   }
+}
+
+.search-form__bg--on-dark {
+  background-color: rgba(white, 0.05);
+  border: 1px solid white;
+  border-radius: 21px;
 }

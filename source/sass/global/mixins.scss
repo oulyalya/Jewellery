@@ -11,7 +11,7 @@
 }
 
 @mixin mobile {
-  @media (min-width: 0) and (max-width: $mob_max) {
+  @media (min-width: 0) and (max-width: $tab_min) {
     @content;
   }
 }

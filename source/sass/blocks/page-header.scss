@@ -1,5 +1,19 @@
 .page-header {
+  position: relative;
   background-color: white;
+
+  @include desktop-only {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100vw;
+      height: 1px;
+      background-color: $c_line;
+    }
+  }
 }
 
 .page-header__top-wrapper {
@@ -13,7 +27,7 @@
       left: 0;
       display: block;
       width: 100vw;
-      height: 3px;
+      height: 1px;
       background-color: $c_line;
     }
   }
@@ -21,14 +35,15 @@
 
 .page-header__top-container {
   @include flex(row);
-  min-height: 115px;
+  min-height: 128px;
   align-items: center;
-  padding-top: 33px;
+  padding-top: 40px;
   padding-bottom: 40px;
 
   @include tablet {
+    min-height: 126px;
     padding-top: 55px;
-    padding-bottom: 50px;
+    padding-bottom: 47px;
   }
 
   @include mobile {

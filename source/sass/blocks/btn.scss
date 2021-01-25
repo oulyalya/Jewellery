@@ -1,0 +1,23 @@
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  padding: 25px 20px;
+  color: white;
+  background-color: $c_main;
+  border: 1px solid $c_main;
+
+  @include hover-effect(white);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $c_hover;
+  }
+}
+
+.btn--ghost {
+  color: $c_text;
+  background-color: transparent;
+  border: 1px solid $c_main;
+}

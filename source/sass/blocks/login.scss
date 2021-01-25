@@ -1,0 +1,16 @@
+.login__form {
+  display: block;
+  margin: 80px auto 80px;
+  padding: 138px 50px;
+  width: 430px;
+  background-color: $c_light;
+
+  @include bg-img;
+  background-size: 430px 138px;
+  background-image: url("../img/bg-login-form@1x.jpg");
+  background-position: 50% 0;
+
+  @include retina {
+    background-image: url("../img/bg-login-form@2x.jpg");
+  }
+}

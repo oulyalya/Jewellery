@@ -8,12 +8,12 @@
   var hideMenu = function () {
     if (header) {
       if (header.classList.contains('page-header--no-js')) {
-        header.classList.remove('page-header--no-js')
-      };
+        header.classList.remove('page-header--no-js');
+      }
       if (header.classList.contains('page-header--nav-open')) {
         header.classList.remove('page-header--nav-open');
         header.classList.add('page-header--nav-closed');
-      };
+      }
     }
   };
 

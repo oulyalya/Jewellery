@@ -1,0 +1,43 @@
+.btn-close {
+  position: relative;
+  z-index: 100;
+  display: block;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0 none;
+  background-color: transparent;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 10;
+    display: block;
+    width: 19px;
+    height: 2px;
+    background-color: $c_text;
+  }
+
+  &::after {
+    transform: rotate(-45deg) translateY(-50%);
+  }
+
+  &::before {
+    transform: rotate(45deg) translateY(-50%);
+  }
+}
+
+.btn-close--round {
+  border-radius: 50%;
+  background-color: black;
+
+  &::after,
+  &::before {
+    background-color: white;
+  }
+}

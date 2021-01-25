@@ -1,0 +1,105 @@
+.filter-form__accordion {
+  margin-bottom: 60px;
+
+  @include tablet {
+    margin-bottom: 12px;
+  }
+
+  @include mobile {
+    margin-bottom: 12px;
+  }
+}
+
+.filter-form h3 {
+  @include font-three(16px, 1.3, $med);
+
+  @include tablet {
+    margin-bottom: -8px;
+    font-size: 18px;
+  }
+
+  @include mobile {
+    margin-bottom: -8px;
+    font-size: 18px;
+  }
+}
+
+.filter-form input[type="checkbox"] {
+  @include visually-hidden;
+}
+
+.filter-form input[type="checkbox"] + label {
+  position: relative;
+  display: block;
+  padding-top: 7px;
+  padding-bottom: 6px;
+  padding-left: 28px;
+  font-size: 14px;
+
+  @include tablet {
+    margin-bottom: 0;
+    padding-top: 11px;
+    padding-bottom: 4px;
+    font-size: 16px;
+  }
+
+  @include mobile {
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    padding-left: 28px;
+    font-size: 16px;
+  }
+}
+
+.filter-form input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 16px;
+  height: 15px;
+  background-color: transparent;
+  border: 1px solid $c_main;
+
+  @include tablet {
+    width: 18px;
+    height: 15px;
+  }
+
+  @include mobile {
+    left: -1px;
+    width: 19px;
+    height: 17px;
+  }
+}
+
+.filter-form input[type="checkbox"]:checked + label::before {
+  background-color: $c_main;
+}
+
+.filter-form input[type="checkbox"]:disabled + label::before {
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+.filter-form input[type="checkbox"]:disabled:checked + label::before {
+  background-color: $c_main;
+  opacity: 0.5;
+}
+
+.filter-form button {
+  margin-top: 25px;
+
+  @include mobile {
+    display: block;
+    max-width: calc(100% - 40px);
+    min-width: 230px;
+    width: 100%;
+    margin-top: 23px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

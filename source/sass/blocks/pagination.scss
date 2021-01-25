@@ -1,0 +1,36 @@
+.pagination {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+  width: 75%;
+  text-align: center;
+}
+
+.pagination__list {
+  @include reset-list;
+  @include flex(row);
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__item {
+  margin: 0 4px;
+
+  @include mobile {
+    margin: 0 9px;
+  }
+}
+
+.pagination__link {
+  display: block;
+  min-width: 15px;
+  color: $c_text-light;
+}
+
+.pagination__link:not(.pagination__link--current) {
+  @include hover-effect($c-main);
+}
+
+.pagination__link--current {
+  color: $c_text;
+}

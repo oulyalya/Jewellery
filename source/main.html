@@ -47,7 +47,7 @@
         <div class="page-header__user">
           <ul class="page-header__user-list">
             <li class="page-header__user-item">
-              <a class="page-header__user-link page-header__user-link--login" href="login.html">Login</a>
+              <a class="page-header__user-link page-header__user-link--login js-login" href="login.html">Login</a>
             </li>
             <li class="page-header__user-item">
               <a class="page-header__user-link page-header__user-link--cart" href="#"><span>Cart 0</span>
@@ -100,7 +100,7 @@
             <a class="main-nav__link main-nav__link--secondary" href="#">Contact Us</a>
           </li>
         </ul>
-        <a class="main-nav__link main-nav__link--login" href="login.html">Login</a>
+        <a class="main-nav__link main-nav__link--login js-login" href="login.html">Login</a>
       </div>
     </nav>
   </header>
@@ -108,7 +108,7 @@
   <main>
     <h1 class="visually-hidden">Chjewellery shop</h1>
 
-    <section class="title-cover title-cover--index title-cover--shadow">
+    <section class="title-cover title-cover--main title-cover--shadow">
       <div class="container">
         <h2>PERFECTION</h2>
         <p>made to be yours</p>
@@ -183,6 +183,46 @@
     <section class="faq">
       <div class="container">
         <h2>Frequently asked questions</h2>
+
+        <div class="faq__list accordion">
+          <div class="accordion__item">
+            <div class="accordion__item-header">
+              What materials are the&nbsp;jewellery made of?
+            </div>
+            <div class="accordion__item-content">
+              Our jewellerry is made of solid&nbsp;gold, silver or leather. Also,&nbsp;some jewellery contains precious
+              and
+              semiprecious stones and crystals.
+            </div>
+          </div>
+          <div class="accordion__item">
+            <div class="accordion__item-header">
+              Which countries do&nbsp;you&nbsp;deliver to?
+            </div>
+            <div class="accordion__item-content">
+              Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and
+              semiprecious stones and crystals.
+            </div>
+          </div>
+          <div class="accordion__item">
+            <div class="accordion__item-header">
+              What are the payment&nbsp;methods?
+            </div>
+            <div class="accordion__item-content">
+              Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and
+              semiprecious stones and crystals.
+            </div>
+          </div>
+          <div class="accordion__item">
+            <div class="accordion__item-header">
+              Can I return the jewellery&nbsp;if&nbsp;it&nbsp;didn’t fit me?
+            </div>
+            <div class="accordion__item-content">
+              Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and
+              semiprecious stones and crystals.
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -209,7 +249,7 @@
               </picture>
             </div>
           </div>
-          <div class="gallery__photos-wrapper">
+          <div class="gallery__photos-wrapper gallery__photos-wrapper--big-img">
             <div class="gallery__photo-wrapper gallery__photo-wrapper--3">
               <picture>
                 <source type="image/webp" srcset="img/img-gallery-03@1x.webp 1x, img/img-gallery-03@2x.webp 2x">
@@ -260,22 +300,45 @@
     </section>
   </main>
 
+  <div class="overlay" id="overlay-login">
+    <div class="popup js-modal">
+      <section class="login">
+        <form class="login__form info-form info-form--on-light-bg" action="#" method="POST">
+          <h1>Log In</h1>
+          <div>
+            <label class="visually-hidden" for="login-email">Enter your email</label>
+            <input class="js-email" type="email" id="login-email" placeholder="Your E-mail" required>
+          </div>
+          <div>
+            <label class="visually-hidden" for="login-email">Enter your password</label>
+            <input class="js-password" type="password" id="login-email" placeholder="Password" required>
+          </div>
+          <a class="" href="#">Forgot your password?</a>
+
+          <button class="btn js-submit" type="submit">Log In</button>
+          <a href="#">Don’t have an account? <span>Sign up</span></a>
+        </form>
+      </section>
+      <button class="js-close" type="button">Close popup</button>
+    </div>
+  </div>
+
   <footer class="page-footer">
     <div class="page-footer__container container">
-      <div class="page-footer__signup signup">
+      <div class="page-footer__signup signup signup--main">
         <h2 class="visually-hidden">Subscribe to our newsletter</h2>
         <p class="signup__title">The good stuff in&nbsp;your inbox</p>
         <p class="signup__caption">News and updates from CH. No&nbsp;spam,&nbsp;we promise.</p>
-        <form class="signup__form" action="#" method="POST">
+        <form class="signup__form info-form info-form--on-dark-bg" action="#" method="POST">
           <div>
             <label class="visually-hidden" for="signup-email">Enter your email</label>
             <input type="email" id="signup-email" placeholder="Your E-mail" required>
-            <button type="submit">Sign Up</button>
+            <button class="btn-in-input btn-in-input--arrow" type="submit">Sign Up</button>
           </div>
         </form>
       </div>
 
-      <div class="page-footer__nav footer-nav">
+      <div class="page-footer__nav footer-nav footer-nav">
         <ul class="footer-nav__list footer-nav__list--for-customers">
           <li class="footer-nav__item">
             <a class="footer-nav__link" href="#">Ordering & Payment</a>

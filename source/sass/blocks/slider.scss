@@ -1,0 +1,25 @@
+.slider {
+  position: relative;
+  max-width: 100%;
+  // overflow: hidden;
+  outline: 1px solid green;
+}
+
+.slider__list {
+  @include reset-list;
+  @include flex(row);
+  flex-wrap: nowrap;
+}
+
+.slider__item {
+  width: 24.5%;
+  margin-right: 2.5%;
+}
+
+.slider article {
+  max-width: 100%;
+}
+
+.slider img {
+  height: 284px;
+}

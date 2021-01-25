@@ -24,11 +24,10 @@
 .signup__caption {
   display: inline-block;
   vertical-align: middle;
-  width: 405px;
-  margin-top: -20px;
-  margin-bottom: 20px;
-  padding: 0 25px;
-  text-align: center;
+  max-width: 450px;
+  margin-top: -11px;
+  margin-bottom: 35px;
+  text-align: left;
   color: $c_text-light;
 
   @include tablet {
@@ -49,49 +48,10 @@
   }
 }
 
-.signup__form div {
-  @include flex(row);
-  width: 100%;
-  border-bottom: 1px solid white;
-
-  @include mobile {
-    max-width: 450px;
-  }
-}
-
-.signup__form input[type="email"] {
-  flex-grow: 1;
-  margin: 0;
-  padding: 11px 0;
-  font-size: 14px;
-  color: white;
-  background-color: transparent;
-  border: 0 none;
-}
-
-.signup__form input[type="email"]:active,
-.signup__form input[type="email"]:focus {
-  outline: 0 none;
-  background-color: transparent;
-}
-
-.signup__form input[type="email"]::placeholder {
-  font-size: 14px;
-}
-
-.signup__form button[type="submit"] {
-  align-self: stretch;
-  min-height: 30px;
-  padding-right: 40px;
-  font-size: 16px;
-  color: white;
-  border: 0 none;
-  background-color: black;
-
-  @include hover-opacity;
-
-  background-repeat: no-repeat;
-  background-size: 29px 9px;
-  background-position: 100% 50%;
-  background-image: url("../img/bg-arrow-white.svg");
+.signup--main .signup__caption {
+  width: 405px;
+  padding: 0 25px;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 25px;
 }

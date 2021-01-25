@@ -1,5 +1,6 @@
 .footer-nav {
   @include flex(row);
+  align-items: flex-start;
   width: auto;
   max-width: 390px;
 
@@ -19,6 +20,11 @@
 
   &--for-customers {
     width: 205px;
+    margin-right: 30px;
+
+    @include tablet {
+      margin-right: 50px;
+    }
   }
 
   &--info {

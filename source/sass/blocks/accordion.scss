@@ -1,0 +1,232 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $c_main;
+  transition: all 1s ease-out;
+}
+
+.accordion__item {
+  position: relative;
+  min-height: 112px;
+  padding: 40px 40px 39px;
+  border-bottom: 1px solid $c_main;
+  transition: all 1s ease-out;
+
+  &:last-child {
+    border-bottom: 0 none;
+  }
+
+  @include tablet {
+    min-height: 83px;
+    padding: 42px 15% 45px 46px;
+  }
+
+  @include mobile {
+    min-height: 83px;
+    padding: 15px 15% 12px 23px;
+  }
+}
+
+.accordion__item-header {
+  @include font-three(18px, 1.3, $med);
+  max-width: 530px;
+  cursor: pointer;
+
+  @include tablet {
+    max-width: none;
+  }
+
+  @include mobile {
+    max-width: none;
+    font-size: 16px;
+  }
+}
+
+.accordion__item-content {
+  @include font-three(16px, 1.3, $reg);
+  max-width: 530px;
+  margin-top: 10px;
+  padding-left: 10px;
+
+  @include tablet {
+    max-width: none;
+    margin-top: 25px;
+    padding-left: 0;
+  }
+
+  @include mobile {
+    max-width: none;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding-left: 0;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+}
+
+.accordion__item-content--no-left-padding {
+  padding-left: 0;
+}
+
+.accordion__item--shown .accordion__item-content {
+  position: static;
+  height: max-content;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+.accordion__item--hidden .accordion__item-content {
+  position: absolute;
+  height: 0;
+  margin: 0;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.accordion__item--hidden {
+  height: max-content;
+  transition: all 0.3s ease-in;
+}
+
+.accordion__item--shown {
+  height: max-content;
+  transition: all 0.3s ease-out;
+}
+
+.accordion__item::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: -1;
+  display: block;
+  width: 15px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: 15px 10px;
+  background-position: 50%;
+  background-image: url("../img/bg-accordion.svg");
+  transform: scale(-1, -1);
+  cursor: pointer;
+
+  @include tablet {
+    width: 25px;
+    height: 12px;
+    background-size: 25px 12px;
+  }
+
+  @include mobile {
+    top: 23px;
+    right: 23px;
+    width: 25px;
+    height: 12px;
+    background-size: 25px 12px;
+  }
+}
+
+.accordion__item--shown::after {
+  display: block;
+  transform: scale(1, 1);
+  transition: all 0.5s ease-out;
+}
+
+.accordion__item--hidden::after {
+  display: block;
+  transform: scale(-1, -1);
+  transition: all 0.5s ease-out;
+}
+
+// sidebar mini-accordion styles
+.accordion--mini {
+  --side_padding: 30px;
+
+  @include tablet {
+    border: 0 none;
+  }
+
+  @include mobile {
+    border: 0 none;
+  }
+}
+
+.accordion--mini .accordion__item {
+  min-height: 68px;
+  padding: 8px 25px 6px;
+
+  &:last-child {
+    border-bottom: 0 none;
+  }
+
+  @include tablet {
+    position: relative;
+    min-height: 92px;
+    border-bottom: 0 none;
+    padding: 16px 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: calc((0 - 1) * var(--side_padding));
+      display: block;
+      width: calc(100% + var(--side_padding) + var(--side_padding) + 10px);
+      height: 1px;
+      background-color: $c_main;
+    }
+  }
+
+  @include mobile {
+    position: relative;
+    min-height: 72px;
+    padding: 5px 12px;
+    border-bottom: 0 none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      // side padding of the wrapper = 10px
+      left: -10px;
+      display: block;
+      // side padding of the wrapper
+      width: calc(100% + 2 * 10px);
+      height: 1px;
+      background-color: $c_main;
+    }
+  }
+}
+
+.accordion--mini .accordion__item::after {
+  top: 28px;
+  right: 25px;
+
+  @include tablet {
+    top: 38px;
+    right: -5px;
+  }
+
+  @include mobile {
+    top: 30px;
+    right: 10px;
+  }
+}
+
+.accordion--mini .accordion__item-content {
+  padding-left: 10px;
+  padding-bottom: 15px;
+
+  @include tablet {
+    padding-bottom: 20px;
+  }
+
+  @include mobile {
+    padding-bottom: 10px;
+  }
+}
+
+.accordion--mini .accordion__item-content--no-left-padding {
+  padding-left: 0;
+}
