@@ -105,8 +105,6 @@
   <main>
     <div class="container">
       <h1 class="visually-hidden">Sign-in form</h1>
-
-      <!-- <section class="overlay" id="overlay-login"> -->
       <section class="login">
         <form class="login__form info-form info-form--on-light-bg" action="#" method="POST">
           <h1>Log In</h1>
@@ -116,18 +114,14 @@
           </div>
           <div>
             <label class="visually-hidden" for="login-email">Enter your password</label>
-            <input type="email" id="login-email" placeholder="Password" required="">
+            <input type="email" id="login-password" placeholder="Password" required="">
           </div>
-          <a class="" href="#">Forgot your password?</a>
-
-          <button class="btn" type="submit">Log In</button>
-          <a href="#">Don’t have an account? <span>Sign up</span></a>
-
+          <a class="login__forgot-password" href="#">Forgot your password?</a>
+          <button class="btn js-submit" type="submit">Log In</button>
+          <a class="login__sign-up" href="#">Don’t have an account? <span>Sign up</span></a>
         </form>
       </section>
-      <!-- </section> -->
     </div>
-
   </main>
 
   <footer class="page-footer">
@@ -223,4 +217,5 @@
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

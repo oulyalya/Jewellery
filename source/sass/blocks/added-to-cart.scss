@@ -1,0 +1,132 @@
+.added-to-cart {
+  position: relative;
+  width: 502px;
+  padding: 30px 35px 55px;
+  background-color: white;
+}
+
+.added-to-cart__item {
+  @include flex(row);
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.added-to-cart h1 {
+  margin-bottom: 45px;
+
+  @include title-three;
+  text-align: center;
+  font-weight: $bold;
+}
+
+.added-to-cart a {
+  color: $c_text;
+
+  @include hover-effect($c_main);
+}
+
+.added-to-cart img {
+  width: 88px;
+  height: 79px;
+  margin-right: 16px;
+}
+
+.added-to-cart h2 {
+  margin-top: -5px;
+  margin-bottom: -6px;
+
+  @include title-three;
+  font-size: 18px;
+  font-weight: $bold;
+}
+
+.added-to-cart__total-wrapper {
+  @include flex(row);
+  margin-top: 43px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.added-to-cart__btns-wrapper {
+  @include flex(row);
+}
+
+.added-to-cart__btns-wrapper button {
+  width: 46.5%;
+}
+
+.added-to-cart__btn-close {
+  position: absolute;
+  top: 11.5px;
+  right: 11.5px;
+}
+
+.added-to-cart__quantity-wrapper {
+  @include flex(column);
+  align-items: flex-end;
+  margin-top: -2px;
+  margin-left: auto;
+}
+
+.added-to-cart__quantity {
+  margin-top: 15px;
+  margin-bottom: 12px;
+  margin-right: 2px;
+  text-align: center;
+  line-height: 1;
+  font-size: 18px;
+}
+
+.added-to-cart__quantity-btn {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border: 0 none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    display: block;
+    width: 14px;
+    height: 2px;
+    background-color: $c_text-light;
+  }
+}
+
+.added-to-cart__quantity-btn:hover,
+.added-to-cart__quantity-btn:focus  {
+  outline: 0 none;
+
+  &::before,
+  &::after {
+    opacity: 0.7;
+  }
+}
+
+.added-to-cart__quantity-btn:active {
+  outline: 0 none;
+
+  &::before,
+  &::after {
+    opacity: 0.4;
+  }
+}
+
+.added-to-cart__quantity-btn--plus {
+  &::after {
+    left: 50%;
+    transform: translate(-50%) rotate(90deg);
+  }
+}
+
+.added-to-cart__quantity-btn--minus {
+  &::after {
+    display: none;
+  }
+}

@@ -6,6 +6,7 @@
   color: white;
   background-color: $c_main;
   border: 1px solid $c_main;
+  cursor: pointer;
 
   @include hover-effect(white);
 
@@ -13,6 +14,7 @@
   &:focus,
   &:active {
     background-color: $c_hover;
+    border: 1px solid $c_hover;
   }
 }
 

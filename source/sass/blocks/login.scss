@@ -1,7 +1,11 @@
+.login {
+  position: relative;
+}
+
 .login__form {
   display: block;
   margin: 80px auto 80px;
-  padding: 138px 50px;
+  padding: 165px 45px 55px;
   width: 430px;
   background-color: $c_light;
 
@@ -13,4 +17,58 @@
   @include retina {
     background-image: url("../img/bg-login-form@2x.jpg");
   }
+}
+
+.login__form h1 {
+  margin-bottom: 25px;
+}
+
+.login__form button[ty-e="submit"] {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.login__forgot-password {
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 45px;
+  text-align: right;
+  font-size: 12px;
+  color: $c_text-light;
+}
+
+
+.login__forgot-password:hover {
+  color: $c_main;
+}
+
+.login__sign-up {
+  display: block;
+  margin-top: 14px;
+  font-size: 14px;
+  text-align: center;
+  color: $c_text-light;
+  letter-spacing: 0.2px;
+}
+
+.login__sign-up span {
+  color: $c_text;
+}
+
+.login__sign-up:hover {
+  @include hover-effect($c_main);
+  color: $c_text-light;
+  opacity: 0.8;
+  transition: all 0.3 ease-in;
+}
+
+.login__sign-up:hover span {
+  opacity: 1;
+  color: $c_main;
+}
+
+.login__close-btn  {
+  position: absolute;
+  top: 90px;
+  right: 10px;
 }

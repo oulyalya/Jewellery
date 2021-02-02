@@ -1,14 +1,32 @@
-.faq h2 {
-  @include title-two;
-  margin-bottom: 50px;
+.faq {
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  @include tablet {
+    padding-top: 8px;
+  }
 
   @include mobile {
+    padding-bottom: 0;
+  }
+}
+
+.faq h2 {
+  @include title-two;
+  margin-bottom: 52px;
+
+  @include tablet {
+    margin-top: 0;
+  }
+
+  @include mobile {
+    margin-top: 0;
     margin-bottom: 30px;
   }
 }
 
 .faq__list {
-  width: 970px;
+  max-width: 970px;
   margin-left: auto;
   margin-right: auto;
 

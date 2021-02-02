@@ -1,0 +1,27 @@
+.recommend {
+
+  max-width: 100%;
+  padding-top: 13px;
+  padding-bottom: 76px;
+  text-align: center;
+
+  & .container {
+    overflow: hidden;
+    background-color: red;
+  }
+
+  & article {
+    max-width: 100px !important;
+    width: 100px !important;
+  }
+}
+
+.recommend h2 {
+  @include title-two;
+  letter-spacing: normal;
+}
+
+.recommend h2 + a {
+  @include link-subtitle;
+  margin-bottom: 30px;
+}

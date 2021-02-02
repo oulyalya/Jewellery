@@ -49,9 +49,11 @@
 }
 
 .signup--main .signup__caption {
-  width: 405px;
-  padding: 0 25px;
-  text-align: center;
-  margin-top: -20px;
-  margin-bottom: 25px;
+  @include desktop-only {
+    width: 405px;
+    padding: 0 25px;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 25px;
+  }
 }

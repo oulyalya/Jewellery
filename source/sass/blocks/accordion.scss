@@ -18,18 +18,21 @@
 
   @include tablet {
     min-height: 83px;
-    padding: 42px 15% 45px 46px;
+    padding: 42px 45px 45px 46px;
   }
 
   @include mobile {
     min-height: 83px;
-    padding: 15px 15% 12px 23px;
+    padding: 15px 20px 12px 23px;
   }
 }
 
 .accordion__item-header {
+  width: 100%;
+  padding-right: 25%;
+
   @include font-three(18px, 1.3, $med);
-  max-width: 530px;
+  text-align: left;
   cursor: pointer;
 
   @include tablet {
@@ -38,6 +41,7 @@
 
   @include mobile {
     max-width: none;
+    padding-right: 20px;
     font-size: 16px;
   }
 }
@@ -56,7 +60,7 @@
 
   @include mobile {
     max-width: none;
-    margin-top: 20px;
+    margin-top: 17px;
     margin-bottom: 5px;
     padding-left: 0;
     font-size: 14px;
@@ -119,7 +123,7 @@
   }
 
   @include mobile {
-    top: 23px;
+    top: 20px;
     right: 23px;
     width: 25px;
     height: 12px;

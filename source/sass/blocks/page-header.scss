@@ -35,10 +35,10 @@
 
 .page-header__top-container {
   @include flex(row);
-  min-height: 128px;
+  min-height: 126px;
   align-items: center;
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 
   @include tablet {
     min-height: 126px;
@@ -52,6 +52,12 @@
     padding-bottom: 20px;
   }
 }
+
+.page-header--main .page-header__top-container {
+  min-height: 115px;
+  padding-top: 20px;
+}
+
 
 .page-header__search {
   display: none;
@@ -77,14 +83,14 @@
   }
 
   @include tablet {
-    width: 25px;
+    width: 30px;
     height: 25px;
   }
 }
 
 .page-header__nav-toggle-icon {
   @include tablet {
-    width: 25px;
+    width: 30px;
     height: 16px;
     stroke: $c_text;
   }

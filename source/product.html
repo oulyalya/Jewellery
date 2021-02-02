@@ -106,38 +106,368 @@
   </header>
 
   <main>
-    <div class="container">
-      <div class="product">
-        <div class="product__imgs-wrapper">
 
+
+    <section class="product">
+      <div class="product__container container">
+        <div class="product__photos-wrapper">
+          <ul class="product__photos-preview">
+            <li class="product__photo">
+              <picture>
+                <source type="image/webp" srcset="img/img-product-02@1x.webp 1x, img/img-product-02@2x.webp 2x">
+                <!-- 1х: 100px; 2x: 200px -->
+                <img src="img/img-product-02@1x.jpg" alt="Beautiful gold chain necklace" width="100" height="125"
+                  srcset="img/img-product-02@2x.jpg 2x" loading="lazy">
+              </picture>
+            </li>
+            <li class="product__photo">
+              <picture>
+                <source type="image/webp" srcset="img/img-product-03@1x.webp 1x, img/img-product-03@2x.webp 2x">
+                <!-- 1х: 100px; 2x: 200px -->
+                <img src="img/img-product-03@1x.jpg" alt="Beautiful gold chain necklace" width="100" height="125"
+                  srcset="img/img-product-03@2x.jpg 2x" loading="lazy">
+              </picture>
+            </li>
+            <li class="product__photo">
+              <picture>
+                <source type="image/webp" srcset="img/img-product-04@1x.webp 1x, img/img-product-04@2x.webp 2x">
+                <!-- 1х: 100px; 2x: 200px -->
+                <img src="img/img-product-04@1x.jpg" alt="Beautiful gold chain necklace" width="100" height="125"
+                  srcset="img/img-product-04@2x.jpg 2x" loading="lazy">
+              </picture>
+            </li>
+          </ul>
+          <div class="product__photo product__photo--current">
+            <picture>
+              <source type="image/webp" srcset="img/img-product-01@1x.webp 1x, img/img-product-01@2x.webp 2x">
+              <!-- 1х: 470px; 2x: 940px -->
+              <img src="img/img-product-01@1x.jpg" alt="Beautiful gold chain necklace" width="470" height="435"
+                srcset="img/img-product-01@2x.jpg 2x" loading="lazy">
+            </picture>
+          </div>
         </div>
         <div class="product__description-wrapper">
-          <h1>Gold Necklace</h1>
-          <p>$ 115</p>
+          <div class="photos product__description">
+            <h1>Gold Necklace</h1>
+            <p>$ 115</p>
+            <div class="product__tab-controls-wrapper">
+              <a class="product__tab-btn product__tab-btn--description">Description</a>
+              <a class="product__tab-btn product__tab-btn--features product__tab-btn--current">Additional info</a>
+            </div>
+            <div class="product__tab-wrapper">
+              <div class="product__tab product__tab--description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum cumque quis asperiores vero atque quos
+                nesciunt ad, impedit dicta officiis odio voluptate possimus ea deserunt corporis. Incidunt, eius quae.
+                Reiciendis!
+              </div>
+              <div class="product__tab product__tab--features product__tab--current">
+                <dl class="product__features">
+                  <div>
+                    <dt>Metal type</dt>
+                    <dd>Gold 585</dd>
+                  </div>
+                  <div>
+                    <dt>Stone</dt>
+                    <dd>Turquoise</dd>
+                  </div>
+                  <div>
+                    <dt>Size</dt>
+                    <dd>18” / 20”</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
 
-          Description
-          Additional info
-          <table>
 
-          </table>
+            <button class="btn js-to-cart">Add to cart</button>
 
-          Metal type
-          Gold 585
-
-          Stone
-          Turquoise
-
-          Size
-          18” / 20”
-
+            <div class="product__services">
+              <span>14 Day Returns</span>
+              <span>2-Year Warranty</span>
+              <span>Free Shipping</span>
+            </div>
+          </div>
         </div>
+    </section>
 
-        14 Day Returns
-        2-Year Warranty
-        Free Shipping
+    <section class="recommend">
+      <div class="container">
+        <h2>You May Also Like</h2>
+        <a href="catalog.html">Shop Now</a>
+        <section class="slider">
+          <div class="slider__wrapper">
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-11@1x.webp 1x, img/img-item-11@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-11@1x.jpg" alt="Silver chain with a pendant" width="230" height="230"
+                      srcset="img/img-item-11@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Necklace with amethyst</h3>
+                  <p>$ 145</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-13@1x.webp 1x, img/img-item-13@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-13@1x.jpg"
+                      alt="Black multi-thread suede chocker with a triangle-shaped pendant" width="230" height="230"
+                      srcset="img/img-item-13@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Layered сhoker</h3>
+                  <p>$ 115</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-14@1x.webp 1x, img/img-item-11@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-14@1x.jpg" alt="Multi-chain necklace with a plate and a pendant" width="230"
+                      height="230" srcset="img/img-item-14@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Gold chain</h3>
+                  <p>$ 215</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-15@1x.webp 1x, img/img-item-14@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-15@1x.jpg" alt="Earrings with blue and purple stones" width="230"
+                      height="230" srcset="img/img-item-15@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Galaxy earrings</h3>
+                  <p>$ 95</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-07@1x.webp 1x, img/img-item-07@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-07@1x.jpg" alt="Elephant-shaped gold earrings with stones" width="230"
+                      height="230" srcset="img/img-item-07@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Elephant earrings</h3>
+                  <p>$ 95</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-12@1x.webp 1x, img/img-item-12@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-12@1x.jpg" alt="Silver chain necklace" width="230" height="230"
+                      srcset="img/img-item-12@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Threader necklace</h3>
+                  <p>$ 115</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-10@1x.webp 1x, img/img-item-10@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-10@1x.jpg" alt="Silver chain with a pendant" width="230" height="230"
+                      srcset="img/img-item-10@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Origami crane necklace</h3>
+                  <p>$ 105</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-09@1x.webp 1x, img/img-item-09@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-09@1x.jpg" alt="Stud earrings with white stones" width="230" height="230"
+                      srcset="img/img-item-09@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Marble earrings</h3>
+                  <p>$ 95</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-04@1x.webp 1x, img/img-item-04@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-04@1x.jpg" alt="Silver chain with gemstone pendant" width="230" height="230"
+                      srcset="img/img-item-04@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Blue gemstone pendant</h3>
+                  <p>$ 105</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-05@1x.webp 1x, img/img-item-05@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-05@1x.jpg" alt="Silver gemstone earrings" width="230" height="230"
+                      srcset="img/img-item-05@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Boho earrings</h3>
+                  <p>$ 75</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-01@1x.webp 1x, img/img-item-01@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-01@1x.jpg" alt="Fine gold chain with a little bird" width="230" height="230"
+                      srcset="img/img-item-01@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Gold bird necklace</h3>
+                  <p>$ 135</p>
+                </div>
+              </a>
+            </article>
+            <article class="slider__card card card--slider">
+              <a href="product.html">
+                <div class="card__img-wrapper card__img-wrapper--height">
+                  <picture>
+                    <source type="image/webp" srcset="img/img-item-03@1x.webp 1x, img/img-item-03@2x.webp 2x">
+                    <!-- 1х: 270px; 2x: 540px -->
+                    <img src="img/img-item-03@1x.jpg" alt="Wide black leather choker" width="230" height="230"
+                      srcset="img/img-item-03@2x.jpg 2x" loading="lazy">
+                  </picture>
+                </div>
+                <div class="card__description-wrapper">
+                  <h3>Black leather choker</h3>
+                  <p>$ 85</p>
+                </div>
+              </a>
+            </article>
+          </div>
+          <div class="slider__btns-wrapper">
+            <button class="slider__btn slider__btn--previous" type="button"><span
+                class="visually-hidden">Previous</span></button>
+            <button class="slider__btn slider__btn--next" type="button"><span
+                class="visually-hidden">Next</span></button>
+          </div>
+          <div class="slider__pagination pagination">
+            <ul class="pagination__list">
+              <li class="pagination__item"><a class="pagination__link--current" href="#">1</a></li>
+              <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
+              <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
+            </ul>
+          </div>
+        </section>
       </div>
-    </div>
+    </section>
+
   </main>
+
+  <div class="overlay" id="overlay-login">
+    <div class="popup js-modal">
+      <section class="login">
+        <form class="login__form info-form info-form--on-light-bg" action="#" method="POST">
+          <h1>Log In</h1>
+          <div>
+            <label class="visually-hidden" for="login-email">Enter your email</label>
+            <input class="js-email" type="email" id="login-email" placeholder="Your E-mail" required>
+          </div>
+          <div>
+            <label class="visually-hidden" for="login-email">Enter your password</label>
+            <input class="js-password" type="password" id="login-password" placeholder="Password" required>
+          </div>
+          <a class="login__forgot-password" href="#">Forgot your password?</a>
+          <button class="btn js-submit" type="submit">Log In</button>
+          <a class="login__sign-up" href="#">Don’t have an account? <span>Sign up</span></a>
+        </form>
+      </section>
+      <button class="login__close-btn btn-close js-close" type="button"><span class="visually-hidden">Close
+          popup</span></button>
+    </div>
+  </div>
+
+  <div class="overlay overlay--transparent" id="overlay-added">
+    <div class="popup js-modal">
+      <section class="added-to-cart">
+        <h1>The item was added to your cart</h1>
+        <div class="added-to-cart__item">
+          <picture>
+            <source type="image/webp" srcset="img/img-product-01@1x.webp 1x, img/img-product-01@2x.webp 2x">
+            <!-- 1х: 470px; 2x: 940px -->
+            <img src="img/img-product-01@1x.jpg" alt="Beautiful gold chain necklace" width="88" height="79"
+              srcset="img/img-product-01@2x.jpg 2x" loading="lazy">
+          </picture>
+          <div>
+            <h2><a href="product.html">Gold Necklace</a></h2>
+            <p>$ 115</p>
+          </div>
+          <div class="added-to-cart__quantity-wrapper">
+            <button class="added-to-cart__quantity-btn added-to-cart__quantity-btn--plus" type="button"><span
+                class="visually-hidden">+</span></button>
+            <p class="added-to-cart__quantity">1</p>
+            <button class="added-to-cart__quantity-btn added-to-cart__quantity-btn--minus" type="button"><span
+                class="visually-hidden">-</span></button>
+          </div>
+        </div>
+        <div class="added-to-cart__total-wrapper">
+          <p>You have 1 item in the cart</p>
+          <p>Cart subtotal: $ 115</p>
+        </div>
+        <div class="added-to-cart__btns-wrapper">
+          <button class="btn btn--ghost" type="button">Continue shopping</button>
+          <button class="btn" type="button">Checkout</button>
+        </div>
+        <button class="added-to-cart__btn-close btn-close js-close" type="button"><span
+            class="visually-hidden">Close</span></button>
+      </section>
+    </div>
+  </div>
 
   <footer class="page-footer">
     <div class="page-footer__container container">
@@ -231,5 +561,6 @@
 
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
-</body>w
+</body>
+
 </html>

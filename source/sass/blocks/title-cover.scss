@@ -10,7 +10,7 @@
 }
 
 .title-cover--main {
-  padding-top: 150px;
+  padding-top: 145px;
   min-height: 463px;
 
   @include bg-img;
@@ -21,7 +21,7 @@
   }
 
   @include mobile {
-    padding-top: 165px;
+    padding-top: 160px;
   }
 }
 
@@ -54,11 +54,15 @@
   color: white;
 }
 
-.title-cover--index h2 {
+.title-cover--main h2 {
   margin-bottom: -5px;
 
   @include title-one;
   color: white;
+
+  @include tablet {
+    margin-left: -15px;
+  }
 }
 
 .title-cover p {
@@ -67,6 +71,10 @@
   @include font-two(22px, 1.3);
   color: white;
   text-align: center;
+
+  @include tablet {
+    margin-left: -15px;
+  }
 
   @include mobile {
     margin-top: -18px;

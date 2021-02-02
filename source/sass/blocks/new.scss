@@ -1,13 +1,33 @@
 .new {
   position: relative;
   padding-top: 95px;
+  padding-bottom: 37px;
   text-align: center;
+
+  @include tablet {
+   padding-top: 44px;
+   padding-bottom: 0;
+  }
+
+  @include mobile {
+    padding-top: 30px;
+    padding-bottom: 5px;
+  }
 }
 
 .new h2 {
   @include title-two;
 }
 
-.new a {
+.new h2 + a {
   @include link-subtitle;
+  margin-bottom: 30px;
+
+  @include tablet {
+    margin-bottom: 20px;
+  }
+
+  @include mobile {
+    margin-bottom: 15px;
+  }
 }

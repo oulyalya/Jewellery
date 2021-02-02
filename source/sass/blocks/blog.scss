@@ -1,9 +1,14 @@
 .blog {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 70px;
 
   @include tablet {
+    padding-top: 15px;
     padding-bottom: 10px;
+  }
+
+  @include mobile {
+    padding-bottom: 0;
   }
 }
 
@@ -18,6 +23,14 @@
 
 .blog h2 {
   @include title-two;
+
+  @include tablet {
+    margin-top: 0;
+  }
+
+  @include mobile {
+    margin-top: 0;
+  }
 }
 
 .blog__posts-wrapper {

@@ -1,25 +1,113 @@
 .slider {
+  --margin: 30px;
+  --item_dt: 30px;
+  --item_tab: 324px;
+
   position: relative;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 100%;
   // overflow: hidden;
-  outline: 1px solid green;
+//   outline: 1px solid blue;
+
 }
 
-.slider__list {
-  @include reset-list;
-  @include flex(row);
+.slider__wrapper {
+  display: flex;
   flex-wrap: nowrap;
-}
-
-.slider__item {
-  width: 24.5%;
-  margin-right: 2.5%;
-}
-
-.slider article {
+  outline: 3px solid orange;
+  height: max-content;
+  width: 100%;
   max-width: 100%;
+  // max-width: 300px;
 }
 
-.slider img {
-  height: 284px;
+.slider__card {
+  display: inline-block;
+  vertical-align: top;
+  width: calc((100% - (3 * var(--margin))) / 4);
+  min-width: calc((100% - (3 * var(--margin))) / 4);
+  max-width: calc((100% - (3 * var(--margin))) / 4);
+  height: max-content;
+  margin-right: var(--margin);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include tablet {
+    max-width: calc(50% - (var(--margin) / 2));
+    min-width: calc(50% - (var(--margin) / 2));
+    width: calc(50% - (var(--margin) / 2));
+
+  }
+
+  @include mobile {
+    max-width: calc(50% - (var(--margin) / 2));
+    min-width: calc(50% - (var(--margin) / 2));
+    width: calc(50% - (var(--margin) / 2));
+
+  }
+}
+
+.slider__btns-wrapper {
+  position: absolute;
+  top: -110px;
+  left: 0;
+
+  @include flex(row);
+  width: 100%;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.slider__btn {
+
+  width: 30px;
+  height: 10px;
+  background-color: transparent;
+  border: 0 none;
+
+  @include bg-img;
+
+  @include hover-opacity;
+
+  @include tablet {
+    width: 36px;
+    height: 16px;
+  }
+}
+
+.slider__btn--previous {
+  position: relative;
+  left: -20px;
+  background-image: url("../img/icon-arrow-left.svg");
+
+  @include tablet {
+    left: 0;
+  }
+}
+
+.slider__btn--next {
+  background-image: url("../img/icon-arrow-right.svg");
+}
+
+.slider__pagination {
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+  @include tablet {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  @include mobile {
+    margin-top: 17px;
+    margin-bottom: 15px;
+  }
 }

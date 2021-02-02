@@ -8,6 +8,8 @@
   border: 0 none;
   background-color: transparent;
 
+  @include hover-opacity;
+
   &::after,
   &::before {
     content: "";
@@ -18,7 +20,7 @@
     margin: 0 auto;
     z-index: 10;
     display: block;
-    width: 19px;
+    width: 18px;
     height: 2px;
     background-color: $c_text;
   }
@@ -28,7 +30,7 @@
   }
 
   &::before {
-    transform: rotate(45deg) translateY(-50%);
+    transform: translateY(-50%) rotate(45deg) ;
   }
 }
 

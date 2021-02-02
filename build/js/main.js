@@ -32,81 +32,130 @@
   accordionBlockHeaders.forEach((item) => item.addEventListener('click', changeActiveBlockHandler));
 })();
 
+'use strict';
 
-// 'use strict';
+(function () {
+  // added to cart modal
 
-// (function () {
+  if (document.querySelector('.js-to-cart')) {
+    var toCartBtn = document.querySelector('.js-to-cart');
 
-//   // нужна проверка существует ли на странице openLoginModalBtns????
-//   // login-form modal
-//   var openLoginModalBtns = document.querySelectorAll('.js-login');
+    var overlay = document.querySelector('#overlay-added');
+    var closeModalBtn = overlay.querySelector('.js-close');
 
-//   var overlay = document.querySelector('#overlay-login');
-//   var closeLoginModalBtn = overlay.querySelector('.js-close');
-//   var form = overlay.querySelector('form');
-//   var userEmail = form.querySelector('.js-email');
-//   var userPassword = form.querySelector('.js-password');
+    var showModalHandler = function (evt) {
+      evt.preventDefault();
 
-//   var isStorageSupport = true;
-//   var storage = '';
+      window.utils.showModal(overlay);
 
-//   var showLoginModalHandler = function (evt) {
-//     evt.preventDefault();
+      closeModalBtn.addEventListener('click', hideModalHandler);
+      overlay.addEventListener('click', overlayPressHandler);
+      document.addEventListener('keydown', escPressHandler);
+    };
 
-//     window.utils.showModal(overlay);
+    var hideModalHandler = function () {
+      closeModalBtn.removeEventListener('click', hideModalHandler);
+      overlay.removeEventListener('click', overlayPressHandler);
+      document.removeEventListener('keydown', escPressHandler);
 
-//     if (userEmail.value) {
-//       userPassword.focus();
-//     } else {
-//       userEmail.focus();
-//     }
+      window.utils.hideModal(overlay);
+    }
 
-//     form.addEventListener('submit', submitHandler);
-//     closeLoginModalBtn.addEventListener('click', hideLoginModalHandler);
-//     overlay.addEventListener('click', overlayPressHandler);
-//     document.addEventListener('keydown', escPressHandler);
-//   };
+    var escPressHandler = function (evt) {
+      if (evt.key === 'Escape') {
+        window.utils.hideModal(overlay);
+      }
+    };
 
-//   var hideLoginModalHandler = function () {
-//     closeLoginModalBtn.removeEventListener('click', hideLoginModalHandler);
-//     overlay.removeEventListener('click', overlayPressHandler);
-//     document.removeEventListener('keydown', escPressHandler);
+    var overlayPressHandler = function (evt) {
+      if (!evt.target.closest('.js-modal')) {
+        window.utils.hideModal(overlay);
+      }
+    };
 
-//     window.utils.hideModal(overlay);
-//   }
+    var submitHandler = function () {
+      if (userEmail && isStorageSupport) {
+        localStorage.setItem('email', email.value);
+      }
+    };
 
-//   var escPressHandler = function (evt) {
-//     if (evt.key === 'Escape') {
-//       window.utils.hideModal(overlay);
-//     }
-//   };
+    toCartBtn.addEventListener('click', showModalHandler);
+  }
+})();
 
-//   var overlayPressHandler = function (evt) {
-//     if (!evt.target.closest('.js-modal')) {
-//       window.utils.hideModal(overlay);
-//     }
-//   };
 
-//   var submitHandler = function () {
-//     if (userEmail && isStorageSupport) {
-//       localStorage.setItem('email', email.value);
-//     }
-//   };
+'use strict';
 
-//   try {
-//     storage = localStorage.getItem('email');
-//   } catch (err) {
-//     isStorageSupport = false;
-//   }
+(function () {
+  // login-form modal
+  if (document.querySelectorAll('.js-login')) {
+    var openLoginModalBtns = document.querySelectorAll('.js-login');
 
-//   if (storage) {
-//     userEmail.value = localStorage.getItem('email');
-//   }
+    var overlay = document.querySelector('#overlay-login');
+    var closeLoginModalBtn = overlay.querySelector('.js-close');
+    var form = overlay.querySelector('form');
+    var userEmail = form.querySelector('.js-email');
+    var userPassword = form.querySelector('.js-password');
 
-//   // if (openLoginModalBtns.length > 0) {
-//   openLoginModalBtns.forEach(btn => btn.addEventListener('click', showLoginModalHandler));
-//   // }
-// })();
+    var isStorageSupport = true;
+    var storage = '';
+
+    var showLoginModalHandler = function (evt) {
+      evt.preventDefault();
+
+      window.utils.showModal(overlay);
+
+      if (userEmail.value) {
+        userPassword.focus();
+      } else {
+        userEmail.focus();
+      }
+
+      form.addEventListener('submit', submitHandler);
+      closeLoginModalBtn.addEventListener('click', hideLoginModalHandler);
+      overlay.addEventListener('click', overlayPressHandler);
+      document.addEventListener('keydown', escPressHandler);
+    };
+
+    var hideLoginModalHandler = function () {
+      closeLoginModalBtn.removeEventListener('click', hideLoginModalHandler);
+      overlay.removeEventListener('click', overlayPressHandler);
+      document.removeEventListener('keydown', escPressHandler);
+
+      window.utils.hideModal(overlay);
+    }
+
+    var escPressHandler = function (evt) {
+      if (evt.key === 'Escape') {
+        window.utils.hideModal(overlay);
+      }
+    };
+
+    var overlayPressHandler = function (evt) {
+      if (!evt.target.closest('.js-modal')) {
+        window.utils.hideModal(overlay);
+      }
+    };
+
+    var submitHandler = function () {
+      if (userEmail && isStorageSupport) {
+        localStorage.setItem('email', email.value);
+      }
+    };
+
+    try {
+      storage = localStorage.getItem('email');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+
+    if (storage) {
+      userEmail.value = localStorage.getItem('email');
+    }
+
+    openLoginModalBtns.forEach(btn => btn.addEventListener('click', showLoginModalHandler));
+  }
+})();
 
 'use strict';
 
@@ -135,6 +184,45 @@
   hideMenu();
   menuToggle.addEventListener('click', toggleMenu);
 })();
+
+// 'use strict';
+
+// (function () {
+//   if (document.querySelector('.product')) {
+//     var productCard = document.querySelector('.product');
+//     var descriptionBtn = productCard.querySelector('.product__tab-btn--description');
+//     var featuresBtn = productCard.querySelector('.product__tab-btn--features');
+//     var descriptionTab = productCard.querySelector('.product__tab--description');
+//     var featuresTab = productCard.querySelector('.product__tab--features');
+
+//     var productInfo = {
+//       descriptionBtn: 'descriptionTab',
+//       featuresBtn: 'featuresTab',
+//     }
+
+
+//     // on button product__tab-btn--current
+//     //  on tab product__tab--current
+
+//     var switchTab = function (btn) {
+//       btn.onclick = function () {
+
+//         var currentTab = productInfo[btn];
+//         // productInfo[btn].classList.add('product__tab--current');
+//         btn.style.background = 'red';
+//         console.log(productInfo[btn]);
+//         console.log(btn);
+//         console.log('1')
+//       }
+//     }
+
+//     switchTab(descriptionBtn);
+//     switchTab(featuresBtn)
+
+
+//     productInfo.forEach((btn) => switchTab(btn));
+//   }
+// })();
 
 'use strict';
 

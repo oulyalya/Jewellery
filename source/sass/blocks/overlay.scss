@@ -8,3 +8,7 @@
   height: 100%;
   background-color: white;
 }
+
+.overlay--transparent {
+  background-color: rgba($c_text, 0.25);
+}

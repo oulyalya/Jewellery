@@ -1,3 +1,359 @@
 .product {
-  // producr
+  padding: 80px 0;
+
+  @include tablet {
+    padding-top: 30px;
+  }
+}
+
+.product__container {
+  @include flex(row);
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  @include tablet {
+    justify-content: space-between
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.product__photos-wrapper {
+  @include flex(row);
+  width: auto;
+  max-width: 600px;
+  flex-basis: calc(100% - (var(--description_width_dt) + 2 * var(--min_gap)));
+  width: calc(100% - (var(--description_width_dt) + 2 * var(--min_gap)));
+  height: 435px;
+  flex-shrink: 2;
+  flex-grow: 1;
+
+  @media (min-widtn: 1023px) and (max-width: 1100px) {
+    flex-basis: calc(100% - (var(--description_width_dt) + var(--min_gap)));
+    padding-right: 0;
+  }
+
+  @include tablet {
+    flex-direction: column;
+    flex-basis: calc(100% - (var((--description_width_tab) + var(--min_gap))));
+    width: calc(100% - (var((--description_width_tab) + var(--min_gap))));
+    max-width: 45%;
+    min-width: 309px;
+    height: max-content;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: max-content;
+    height: max-content;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
+.product__description-wrapper {
+  --description_width_dt: 370px;
+  --description_width_tab: 319px;
+  --min_gap: 30px;
+
+  flex-shrink: 1;
+  display: block;
+  width: calc(var(--description_width_dt) + (2 * var(--min_gap)));
+  min-height: 435px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--min_gap);
+  padding-right: var(--min_gap);
+
+  @media (max-width: 1100px) {
+    width: calc(var((--description_width_dt) + var(--min_gap)));
+    margin-right: calc((0 - 1) * var(--min_gap));
+    margin-right: -50px;
+    margin-left: 0;
+  }
+
+  @include tablet {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: calc(var(--description_width_tab) + var(--min_gap));
+    padding-right: 0;
+    padding-left: var(--min_gap);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include mobile {
+    width: auto;
+    width: 100%;
+    max-width: 550px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.product__photos-preview {
+  overflow: hidden;
+  @include reset-list;
+
+  @include flex(column);
+  flex-wrap: wrap;
+  width: 100px;
+  height: 100%;
+
+  @include tablet {
+    flex-direction: row;
+    width: 100%;
+    height: 129px;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.product__photo {
+  --photo_gap: 30px;
+
+  flex-shrink: 1;
+  width: 100px;
+  height: 125px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include tablet {
+    max-width: none;
+    flex-grow: 1;
+    width: calc((100% - 2 * var(--photo_gap)) / 3);
+    height: 100%;
+    margin-right: var(--photo_gap);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.product__photo--current {
+  order: 4;
+  flex-shrink: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: calc(100% - var(--photo_gap) - 100px);
+  max-width: none;
+  min-height: 100%;
+  margin-left: var(--photo_gap);
+  overflow: hidden;
+  cursor: auto;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include tablet {
+    position: relative;
+    order: -1;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    width: 100%;
+    min-height: 0;
+    height: 286px;
+    margin-bottom: var(--photo_gap);
+    margin-left: 0;
+  }
+
+  @include mobile {
+    margin-left: 0;
+    width: max-content;
+    min-width: 290px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 260px;
+    min-height: 260px;
+  }
+}
+
+.product__photo img {
+  object-fit: cover;
+  object-position: center;
+
+  @include tablet {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.product__photo--current img {
+  width: 470px;
+  max-width: none;
+  height: 435px;
+
+  @include tablet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    min-height: 286px;
+    height: auto;
+    max-height: none;
+  }
+
+  @include mobile {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.product__description {
+  @include flex(column);
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 435px;
+  padding: 0;
+}
+
+.product__description h1 {
+  margin-top: -10px;
+  margin-bottom: 0;
+
+  @include title-two;
+  font-size: 32px;
+  text-align: left;
+}
+
+.product__description p {
+  margin-top: -5px;
+  margin-bottom: 37px;
+  font-size: 26px;
+
+  @include mobile {
+    margin-bottom: 27px;
+  }
+}
+
+.product__tab-btn {
+  margin-right: 30px;
+  font-size: 16px;
+  color: $c_text-light;
+  cursor: pointer;
+}
+
+.product__tab-btn--current {
+  color: $c_text;
+}
+
+.product__tab-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.product__tab {
+  display: none;
+  font-size: 14px;
+}
+
+.product__tab--current {
+  display: block;
+}
+
+.product__features {
+  @include reset-list;
+}
+
+.product__features div {
+  @include flex(row);
+  width: 100%;
+  padding: 11px 0;
+  border-bottom: 1px solid $c_line;
+}
+
+.product__features dl,
+.product__features dt,
+.product__features dd {
+  @include reset-list;
+}
+
+.product__features dt {
+  font-size: 14px;
+  font-weight: $med;
+}
+.product__features dd {
+  font-size: 14px;
+  font-weight: $reg;
+}
+
+.product__services {
+  @include flex(row);
+  font-size: 14px;
+  color: $c_text-light;
+
+  @include tablet {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  @include mobile {
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 12px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 1px;
+      height: 100%;
+      background-color: $c_line;
+    }
+
+    &::before {
+      left: 33%;
+    }
+
+    &::after {
+      right: 33%;
+    }
+  }
+}
+
+.product__services span {
+  @include mobile {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 25%;
+    text-align: center;
+  }
+}
+
+.product button {
+  margin-top: auto;
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 15px;
+  }
+
+  @include mobile {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 }
