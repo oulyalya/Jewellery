@@ -52,6 +52,10 @@
   }
 }
 
+.filter-form input[type="checkbox"]:focus + label::before {
+  outline: 2px solid $c_hover;
+}
+
 .filter-form input[type="checkbox"] + label::before {
   content: "";
   position: absolute;

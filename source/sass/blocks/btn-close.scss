@@ -1,9 +1,9 @@
 .btn-close {
   position: relative;
-  z-index: 100;
+  z-index: 200;
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   padding: 0;
   border: 0 none;
   background-color: transparent;
@@ -20,7 +20,7 @@
     margin: 0 auto;
     z-index: 10;
     display: block;
-    width: 18px;
+    width: 24px;
     height: 2px;
     background-color: $c_text;
   }
@@ -30,16 +30,20 @@
   }
 
   &::before {
-    transform: translateY(-50%) rotate(45deg) ;
+    transform: translateY(-50%) rotate(45deg);
   }
 }
 
 .btn-close--round {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: black;
 
   &::after,
   &::before {
+    width: 18px;
+    height: 2px;
     background-color: white;
   }
 }

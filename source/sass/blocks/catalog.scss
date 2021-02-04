@@ -5,10 +5,12 @@
   padding-top: 80px;
 
   @include tablet {
+    // position: static;
     padding-top: 50px;
   }
 
   @include mobile {
+    // position: static;
     padding-top: 40px;
     padding-bottom: 50px;
   }
@@ -68,7 +70,7 @@
   margin-right: 50px;
 
   @include tablet {
-    position: absolute;
+    position: fixed;
     display: none;
     top: 0;
     left: 0;
@@ -79,7 +81,9 @@
   }
 
   @include mobile {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: none;
     width: 100%;
     margin-right: 0;
@@ -95,7 +99,7 @@
     position: absolute;
     top: 0;
     left: -20px;
-    width: max-content;
+    width: 458px;
     height: max-content;
     padding-top: 35px;
     transform: translateX(0);

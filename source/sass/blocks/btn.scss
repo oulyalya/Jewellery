@@ -6,6 +6,7 @@
   color: white;
   background-color: $c_main;
   border: 1px solid $c_main;
+  text-align: center;
   cursor: pointer;
 
   @include hover-effect(white);

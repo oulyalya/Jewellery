@@ -9,20 +9,25 @@
   margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 100%;
-  // overflow: hidden;
-//   outline: 1px solid blue;
-
+  width: auto;
+  // max-width: 100%;
+  //   outline: 1px solid blue;
 }
 
 .slider__wrapper {
+  overflow: hidden;
+}
+
+.slider__slides {
+  position: relative;
   display: flex;
   flex-wrap: nowrap;
   outline: 3px solid orange;
   height: max-content;
-  width: 100%;
+  width: auto;
   max-width: 100%;
   // max-width: 300px;
+  // max-width: 1000px;
 }
 
 .slider__card {
@@ -34,22 +39,23 @@
   height: max-content;
   margin-right: var(--margin);
 
-  &:last-child {
-    margin-right: 0;
-  }
+  // &:last-child {
+  //   margin-right: 0;
+  // }
 
   @include tablet {
     max-width: calc(50% - (var(--margin) / 2));
     min-width: calc(50% - (var(--margin) / 2));
     width: calc(50% - (var(--margin) / 2));
-
+    // max-width: 45%;
+    // width: 40%;
+    // margin: 0;
   }
 
   @include mobile {
     max-width: calc(50% - (var(--margin) / 2));
     min-width: calc(50% - (var(--margin) / 2));
     width: calc(50% - (var(--margin) / 2));
-
   }
 }
 
@@ -67,14 +73,12 @@
 }
 
 .slider__btn {
-
   width: 30px;
   height: 10px;
   background-color: transparent;
   border: 0 none;
 
   @include bg-img;
-
   @include hover-opacity;
 
   @include tablet {

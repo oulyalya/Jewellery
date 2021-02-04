@@ -121,7 +121,7 @@
 
         <div class="catalog__filter-overlay overlay" id="overlay-filter">
           <div class="catalog__filter-wrapper js-modal">
-            <button class="catalog__filter-close-btn btn-close btn-close--round" type="button">
+            <button class="catalog__filter-close-btn btn-close btn-close--round js-close" type="button">
               <span class="visually-hidden">Close filters</span>
             </button>
             <form class="catalog__filter-form filter-form" action="#" method="GET">
@@ -412,7 +412,7 @@
     <div class="popup js-modal">
       <section class="login">
         <form class="login__form info-form info-form--on-light-bg" action="#" method="POST">
-          <h1>Log In</h1>
+          <h2>Log In</h2>
           <div>
             <label class="visually-hidden" for="login-email">Enter your email</label>
             <input class="js-email" type="email" id="login-email" placeholder="Your E-mail" required>
@@ -426,7 +426,7 @@
           <a class="login__sign-up" href="#">Don’t have an account? <span>Sign up</span></a>
         </form>
       </section>
-      <button class="login__close-btn btn-close js-close" type="button"><span class="visually-hidden">Close
+      <button class="popup__close-btn btn-close js-close" type="button"><span class="visually-hidden">Close
           popup</span></button>
     </div>
   </div>
@@ -524,5 +524,4 @@
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 </body>
-
 </html>

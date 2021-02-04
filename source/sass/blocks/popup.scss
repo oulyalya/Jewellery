@@ -1,8 +1,21 @@
 .popup {
-  position: absolute;
-  top: 30px;
+  position: fixed;
+  top: 2%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
   overflow: auto;
+  width: max-content;
+  height: max-content;
+}
+
+.popup--center {
+  top: 18%;
+}
+
+.popup__close-btn {
+  position: absolute;
+  top: 11px;
+  right: 6px;
+  z-index: 100;
 }

@@ -6,16 +6,26 @@
   // padding-bottom: 80px;
   overflow: hidden;
   text-align: center;
+
+  outline: 10px solid yellowgreen;
 }
 
 .card--slider {
-  @include tablet {
-    width: 100px;
-  }
+  min-width: 30px;
+  max-width: 250px;
+  width: max-content;
+  // min-width: 0;
+  // width: auto;
+  // max-width: 70px;
 
-  @include mobile {
-    width: 120px;
-  }
+  // @include tablet {
+  //   min-width: 0;
+  //   width: 100px;
+  // }
+
+  // @include mobile {
+  //   width: 120px;
+  // }
 }
 
 .card__description-wrapper {
@@ -26,11 +36,11 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  // width: max-content;
   min-height: 85px;
   margin: 0;
   padding: 18px 0 20px;
   background-color: white;
-  // background-color: red;
 
   @include mobile {
     justify-content: flex-start;
@@ -62,6 +72,7 @@
 
 .card__img-wrapper {
   width: 100%;
+  // width: max-content;
   height: max-content;
   margin: 0;
 }
@@ -99,5 +110,5 @@
 
 .card:hover img {
   transform: scale(1.05);
-  transition: all 0.7s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }

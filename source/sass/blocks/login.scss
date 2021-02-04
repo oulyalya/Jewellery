@@ -1,10 +1,18 @@
 .login {
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login--page {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .login__form {
   display: block;
-  margin: 80px auto 80px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 165px 45px 55px;
   width: 430px;
   background-color: $c_light;
@@ -19,7 +27,8 @@
   }
 }
 
-.login__form h1 {
+.login__form h2 {
+  @include title-two;
   margin-bottom: 25px;
 }
 
@@ -36,7 +45,6 @@
   font-size: 12px;
   color: $c_text-light;
 }
-
 
 .login__forgot-password:hover {
   color: $c_main;
@@ -65,10 +73,4 @@
 .login__sign-up:hover span {
   opacity: 1;
   color: $c_main;
-}
-
-.login__close-btn  {
-  position: absolute;
-  top: 90px;
-  right: 10px;
 }
