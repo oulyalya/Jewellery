@@ -37,7 +37,7 @@
       document.removeEventListener('keydown', escPressHandler);
 
       window.utils.hideModal(overlay);
-    }
+    };
 
     var escPressHandler = function (evt) {
       if (evt.key === 'Escape') {
@@ -53,7 +53,7 @@
 
     var submitHandler = function () {
       if (userEmail && isStorageSupport) {
-        localStorage.setItem('email', email.value);
+        localStorage.setItem('email', userEmail.value);
       }
     };
 
@@ -67,6 +67,8 @@
       userEmail.value = localStorage.getItem('email');
     }
 
-    openLoginModalBtns.forEach(btn => btn.addEventListener('click', showLoginModalHandler));
+    openLoginModalBtns.forEach(function (btn) {
+      btn.addEventListener('click', showLoginModalHandler);
+    });
   }
 })();

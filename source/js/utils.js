@@ -10,7 +10,7 @@
       body.classList.add('js-no-scroll');
     }
 
-    body.style = `margin-left: -${shift}px`;
+    body.style = 'margin-left: ' + -shift + 'px';
 
     if (el) {
       el.classList.add('js-display-block');
@@ -24,7 +24,7 @@
 
     if (body.offsetHeight > window.innerHeight) {
       body.classList.remove('js-no-scroll');
-      document.body.style = "margin-left: 0";
+      document.body.style = 'margin-left: 0';
 
       HTML.style.scrollBehavior = 'auto';
       HTML.style.scrollBehavior = 'smooth';

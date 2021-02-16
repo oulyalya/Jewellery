@@ -19,13 +19,14 @@
 }
 
 .slider__slides {
-  position: relative;
+  // position: relative;
   display: flex;
   flex-wrap: nowrap;
   outline: 3px solid orange;
   height: max-content;
   width: auto;
   max-width: 100%;
+  transition: all 0.5s ease-in-out;
   // max-width: 300px;
   // max-width: 1000px;
 }
@@ -33,23 +34,16 @@
 .slider__card {
   display: inline-block;
   vertical-align: top;
-  width: calc((100% - (3 * var(--margin))) / 4);
   min-width: calc((100% - (3 * var(--margin))) / 4);
   max-width: calc((100% - (3 * var(--margin))) / 4);
+  width: auto;
   height: max-content;
-  margin-right: var(--margin);
-
-  // &:last-child {
-  //   margin-right: 0;
-  // }
 
   @include tablet {
-    max-width: calc(50% - (var(--margin) / 2));
     min-width: calc(50% - (var(--margin) / 2));
-    width: calc(50% - (var(--margin) / 2));
-    // max-width: 45%;
-    // width: 40%;
-    // margin: 0;
+    max-width: 45%;
+    width: 40%;
+    margin: 0;
   }
 
   @include mobile {
@@ -61,6 +55,7 @@
 
 .slider__btns-wrapper {
   position: absolute;
+  z-index: 100;
   top: -110px;
   left: 0;
 
@@ -102,6 +97,8 @@
 }
 
 .slider__pagination {
+  // background-color: rgba(red, 0.5);
+  // height: 100px;
   margin-top: 32px;
   margin-bottom: 32px;
 

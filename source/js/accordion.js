@@ -5,12 +5,14 @@
   var accordionBlockHeaders = document.querySelectorAll('.accordion__item-header');
 
   var hideBlocks = function (blocks) {
-    blocks.forEach((item) => item.closest('.accordion__item').classList.add('accordion__item--hidden'));
+    blocks.forEach(function (item) {
+      item.closest('.accordion__item').classList.add('accordion__item--hidden');
+    });
   };
 
   var removeActiveBlock = function (blocks) {
     if (blocks.length > 0) {
-      blocks.forEach((block) => {
+      blocks.forEach(function (block) {
         block.classList.remove('accordion__item--shown');
         block.classList.add('accordion__item--hidden');
       });
@@ -29,5 +31,7 @@
   };
 
   hideBlocks(accordionBlocks);
-  accordionBlockHeaders.forEach((item) => item.addEventListener('click', changeActiveBlockHandler));
+  accordionBlockHeaders.forEach(function (item) {
+    item.addEventListener('click', changeActiveBlockHandler);
+  });
 })();

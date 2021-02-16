@@ -5,12 +5,14 @@
   var accordionBlockHeaders = document.querySelectorAll('.accordion__item-header');
 
   var hideBlocks = function (blocks) {
-    blocks.forEach((item) => item.closest('.accordion__item').classList.add('accordion__item--hidden'));
+    blocks.forEach(function (item) {
+      item.closest('.accordion__item').classList.add('accordion__item--hidden');
+    });
   };
 
   var removeActiveBlock = function (blocks) {
     if (blocks.length > 0) {
-      blocks.forEach((block) => {
+      blocks.forEach(function (block) {
         block.classList.remove('accordion__item--shown');
         block.classList.add('accordion__item--hidden');
       });
@@ -29,7 +31,9 @@
   };
 
   hideBlocks(accordionBlocks);
-  accordionBlockHeaders.forEach((item) => item.addEventListener('click', changeActiveBlockHandler));
+  accordionBlockHeaders.forEach(function (item) {
+    item.addEventListener('click', changeActiveBlockHandler);
+  });
 })();
 
 'use strict';
@@ -158,7 +162,7 @@
       document.removeEventListener('keydown', escPressHandler);
 
       window.utils.hideModal(overlay);
-    }
+    };
 
     var escPressHandler = function (evt) {
       if (evt.key === 'Escape') {
@@ -174,7 +178,7 @@
 
     var submitHandler = function () {
       if (userEmail && isStorageSupport) {
-        localStorage.setItem('email', email.value);
+        localStorage.setItem('email', userEmail.value);
       }
     };
 
@@ -188,7 +192,9 @@
       userEmail.value = localStorage.getItem('email');
     }
 
-    openLoginModalBtns.forEach(btn => btn.addEventListener('click', showLoginModalHandler));
+    openLoginModalBtns.forEach(function (btn) {
+      btn.addEventListener('click', showLoginModalHandler);
+    });
   }
 })();
 
@@ -220,44 +226,35 @@
   menuToggle.addEventListener('click', toggleMenu);
 })();
 
-// 'use strict';
+'use strict';
 
-// (function () {
-//   if (document.querySelector('.product')) {
-//     var productCard = document.querySelector('.product');
-//     var descriptionBtn = productCard.querySelector('.product__tab-btn--description');
-//     var featuresBtn = productCard.querySelector('.product__tab-btn--features');
-//     var descriptionTab = productCard.querySelector('.product__tab--description');
-//     var featuresTab = productCard.querySelector('.product__tab--features');
+// product card tabs
+(function () {
+  if (document.querySelector('.product__tab-btn')) {
+    var tabBtns = document.querySelectorAll('.product__tab-btn');
+    var tabPanels = document.querySelectorAll('.product__tab');
+    var tabName;
 
-//     var productInfo = {
-//       descriptionBtn: 'descriptionTab',
-//       featuresBtn: 'featuresTab',
-//     }
+    var switchTabHandler = function () {
+      tabBtns.forEach(function (btn) {
+        btn.classList.remove('product__tab-btn--current');
+      });
+      this.classList.add('product__tab-btn--current');
+      tabName = this.getAttribute('data-tab-name');
+      showTabPanel();
+    };
 
+    var showTabPanel = function () {
+      tabPanels.forEach(function (panel) {
+        panel.classList.contains(tabName) ? panel.classList.add('product__tab--current') : panel.classList.remove('product__tab--current');
+      });
+    }
 
-//     // on button product__tab-btn--current
-//     //  on tab product__tab--current
-
-//     var switchTab = function (btn) {
-//       btn.onclick = function () {
-
-//         var currentTab = productInfo[btn];
-//         // productInfo[btn].classList.add('product__tab--current');
-//         btn.style.background = 'red';
-//         console.log(productInfo[btn]);
-//         console.log(btn);
-//         console.log('1')
-//       }
-//     }
-
-//     switchTab(descriptionBtn);
-//     switchTab(featuresBtn)
-
-
-//     productInfo.forEach((btn) => switchTab(btn));
-//   }
-// })();
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener('click', switchTabHandler)
+    });
+  }
+})();
 
 'use strict';
 
@@ -268,322 +265,90 @@
 
   var toggleBackground = function () {
     if (formsOnLightBg) {
-      formsOnLightBg.forEach((form) => {
+      formsOnLightBg.forEach(function (form) {
         var inputSearch = form.querySelector('input[type="search"]');
         var container = inputSearch.closest('.search-form__bg');
 
-        inputSearch.addEventListener('focus', () => {
+        inputSearch.addEventListener('focus', function () {
           container.classList.add('search-form__bg--on-light');
-        })
+        });
 
-        inputSearch.addEventListener('blur', () => {
+        inputSearch.addEventListener('blur', function () {
           container.classList.remove('search-form__bg--on-light');
-        })
-      })
+        });
+      });
     }
 
     if (formsOnDarkBg) {
-      formsOnDarkBg.forEach((form) => {
+      formsOnDarkBg.forEach(function (form) {
         var inputSearch = form.querySelector('input[type="search"]');
         var container = inputSearch.closest('.search-form__bg');
 
-        inputSearch.addEventListener('focus', () => {
+        inputSearch.addEventListener('focus', function () {
           container.classList.add('search-form__bg--on-dark');
-        })
+        });
 
-        inputSearch.addEventListener('blur', () => {
+        inputSearch.addEventListener('blur', function () {
           container.classList.remove('search-form__bg--on-dark');
-        })
-      })
+        });
+      });
     }
-  }
+  };
 
   toggleBackground();
 })();
 
-// 'use strict';
-if (document.querySelector('.slider__wrapper')) {
-  var slider = document.querySelector('.slider');
-  var sliderFrame = slider.querySelector('.slider__wrapper');
-  var sliderContent = slider.querySelector('.slider__slides');
-  var sliderCard = slider.querySelector('.slider__card');
-  var gap = 30;
+'use strict';
 
+(function () {
+  if (document.querySelector('.slider')) {
+    new Swiper('.slider__wrapper', {
+      navigation: {
+        nextEl: '.slider__btn--next',
+        prevEl: '.slider__btn--previous',
+      },
 
-  var sliderCards = slider.querySelectorAll('.slider__card');
+      pagination: {
+        el: '.slider__pagination',
+        renderBullet: function (index, bulletClass) {
+          return '<span class="' + bulletClass + '">' + (index + 1) + '</span>';
+        },
+        bulletClass: 'pagination__item',
+        bulletActiveClass: 'pagination__item--current',
+        clickable: true,
 
+      },
 
-  var leftBtn = slider.querySelector('.slider__btn--previous');
-  var rightBtn = slider.querySelector('.slider__btn--next');
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          pagination: {
+            type: 'fraction',
+          },
+        },
+        768: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          pagination: {
+            type: 'bullets',
+          },
+        },
+        1024:
+        {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          pagination: {
+            type: 'bullets',
+          },
+        },
+      },
 
-  // var width = sliderFrame.offsetWidth;
-
-
-  var defineDevice = function () {
-    var width = document.querySelector('.container').offsetWidth;
-    var device = '';
-
-    switch (true) {
-      case width >= 1023:
-        device = 'desktop'
-        break;
-      case width >= 768 && width <= 1022:
-        device = 'tablet'
-        break;
-      case width >= 320 && width <= 767:
-        device = 'mobile'
-        break;
-    }
-
-    // document.querySelector('.check').onclick = () => {
-    // console.log(width)
-    // console.log(device)
-    // }
-    return device;
+      spaceBetween: 30,
+      loop: true,
+    });
   }
-
-  var defineMaxProducts = function () {
-    var device = defineDevice();
-    var maxProducts;
-
-    switch (true) {
-      case device === 'desktop':
-        maxProducts = 4;
-        break;
-      case device === 'tablet':
-        maxProducts = 2;
-        break;
-      case device === 'mobile':
-        maxProducts = 2;
-        break;
-    }
-    // console.log(maxProducts)
-    return maxProducts;
-  }
-
-  var showNextSlide = function () {
-    var cardsPerSlide = defineMaxProducts();
-    var cardWidth = sliderCard.offsetWidth;
-
-    var sliderContentWidth = sliderCards.length * cardWidth + ((cardsPerSlide - 1) * gap);
-
-    // допускает значение с половиной
-    var slidesQuantity = sliderCards.length / cardsPerSlide;
-    // количество полных слайдов (то есть тех, где карточек 2 из 2х или 4 из 4х)
-    var fullSlidesQuantity = Math.floor(slidesQuantity);
-
-    // var currentSlide = position / slideWidth;
-    // currentSlide = Math.abs(currentSlide)
-    // (если текущий слайд == фул слайдз квонтити, то на след клике шивт равен нескольким карточкам, а  не целому слайду)
-
-    // if (sliderCards.length % cardsPerSlide == 0) {
-    // slidesQuantity = sliderCards.length % cardsPerSlide;
-    // console.log(slidesQuantity + ' slidesQuantity')
-    // console.log(currentSlide + ' currentSlide')
-    // }
-
-
-    // var frameWidth = sliderFrame.offsetWidth;
-
-    var slideWidth = (cardsPerSlide * cardWidth) + (cardsPerSlide * gap);
-
-    var shift = slideWidth;
-    var maxLeft = slidesQuantity * slideWidth;
-
-    // // проверка четко ли по количесвтву карточек
-    // if (sliderCards.length % cardsPerSlide === 0) {
-    //   console.log('четко')
-    //   shift = slideWidth;
-    //   // шифт = slideWidth
-    //   // сдвигаем на целый слайд
-    // } else {
-    //   // if (position == (sliderContentWidth - strayCards * cardWidth + strayCards * gap)) {
-    //   console.log('остаток')
-    //   var strayCards = sliderCards.length - (cardsPerSlide * Math.floor(slidesQuantity));
-    //   shift = strayCards * cardWidth + strayCards * gap;
-    //   // если остаток ширины контента меньше ширины слайда,
-    //   // сдвигаем на остаток карточек
-    //   // }
-    // }
-
-
-    // var position = sliderContent.offsetLeft;
-
-    // if ((slideWidth * slidesQuantity + sliderCards.length * gap) == sliderContentWidth) {
-    //   console.log(1111)
-    // }
-
-    // console.log((slideWidth * slidesQuantity + (sliderCards.length - 1) * gap))
-    var position = sliderContent.offsetLeft;
-    position = Math.abs(position);
-    // console.log(currentSlide + ' currentSlide')
-
-
-    // right
-    if (position < maxLeft - slideWidth) {
-      console.log(1)
-      sliderContent.style.left = `-${position += shift}px`;
-      // console.log(sliderContent)
-      console.log(position + 'pos')
-      console.log(shift + 'wdt')
-    }
-    else {
-      console.log(11)
-      sliderContent.style.left = 0;
-
-    }
-
-
-
-
-
-
-
-
-    // var currentSlide = (position + slideWidth) / (sliderFrame.offsetWidth + gap);
-    // // currentSlide = Math.abs(currentSlide)
-    // // (если текущий слайд == фул слайдз квонтити, то на след клике шивт равен нескольким карточкам, а  не целому слайду)
-
-    // // if (sliderCards.length % cardsPerSlide == 0) {
-    // // slidesQuantity = sliderCards.length % cardsPerSlide;
-    // // console.log(slidesQuantity + ' slidesQuantity')
-    // console.log(currentSlide + ' currentSlide')
-    // console.log(`${sliderContent.offsetWidth} / ${position}`)
-    // console.log(typeof position)
-    // // }
-
-    // sliderContent.style.transform = `translateX(-${shift}px)`;
-    // sliderContent.style.left = sliderContent.offsetLeft += shift
-    // sliderContent.style.left = `-${position += shift}px`;
-
-    // `-${sliderContent.offsetLeft + shift}px`;
-    // sliderContent.style.left = `-${shift}px`;
-    // console.log(position)
-
-    // sliderFrame.style.border = "14px solid purple"
-    // sliderContent.style.background = "red"
-    // return amount;
-  }
-
-
-  var showPreviousSlide = function () {
-    var cardsPerSlide = defineMaxProducts();
-    var cardWidth = sliderCard.offsetWidth;
-
-    // var sliderContentWidth = sliderCards.length * cardWidth + ((cardsPerSlide - 1) * gap);
-
-    // допускает значение с половиной
-    var slidesQuantity = sliderCards.length / cardsPerSlide;
-    // количество полных слайдов (то есть тех, где карточек 2 из 2х или 4 из 4х)
-    var fullSlidesQuantity = Math.floor(slidesQuantity);
-
-
-    // var frameWidth = sliderFrame.offsetWidth;
-
-    var slideWidth = (cardsPerSlide * cardWidth) + (cardsPerSlide * gap);
-
-    var shift = slideWidth;
-    var maxLeft = cardWidth * (sliderCards.length - cardsPerSlide) + gap * (sliderCards.length - cardsPerSlide);
-
-    var position = sliderContent.offsetLeft;
-    position = Math.abs(position);
-
-    if (position == 0) {
-      sliderContent.style.left = `-${maxLeft}px`;
-    }
-    else {
-      sliderContent.style.left = `-${position -= shift}px`;
-    }
-  }
-
-
-  var windowChangeHandler = function () {
-    var device = defineDevice();
-
-    var cardsPerSlide = defineMaxProducts();
-    var cardWidth = sliderCard.offsetWidth;
-    var slidesQuantity = sliderCards.length / cardsPerSlide;
-    var slideWidth = (cardsPerSlide * cardWidth) + (cardsPerSlide * gap);
-    var position = sliderContent.offsetLeft;
-    position = Math.abs(position);
-    console.log(position);
-    // console.log(slideWidth);
-    // console.log(slidesQuantity);
-
-
-    var check;
-    var shift;
-    // if (device == 'desktop') {
-    // check = position - ((cardWidth + gap) * cardsPerSlide);
-    if (device == 'mobile' && position % ((cardWidth + gap) * 2) == 0
-      || device == 'tablet' && position % ((cardWidth + gap) * 2) == 0
-      || device == 'desktop' && position % ((cardWidth + gap) * 4) == 0) {
-      // shift = 0;
-      // }
-    } else {
-
-      // var fullSlides = position / ((cardWidth + gap) * cardsPerSlide);
-      shift = position - fullSlides;
-      // var difference = position - fullSlides;
-      // position += difference;
-      console.log(fullSlides, 222222222222222222)
-
-    }
-    // // sliderContent.style.left = `${check}px`;
-    console.log(`${(sliderContent.offsetWidth - position) - (cardWidth + gap) * cardsPerSlide} (cardWidth + gap) * cardsPerSlide gjp`)
-    // sliderContent.style.left = `-${shift}px`;
-    console.log(shift)
-
-
-    // position - целые слайды , остается куксочек, на жтот кусочек - смешение
-  }
-
-  window.addEventListener('resize', windowChangeHandler)
-  document.querySelector('.check').onclick = defineMaxProducts;
-  leftBtn.onclick = showPreviousSlide;
-  rightBtn.onclick = showNextSlide;
-}
-  // var slides;
-  // var count = slides.length
-
-// (function () {
-//   // slider
-//   var slider = document.querySelector('.slider');
-//   var sliderContent = document.querySelector('.slider__list');
-//   var scrollLeftBtn = document.querySelector('.slider__control--previous');
-//   var scrollRightBtn = document.querySelector('.slider__control--next');
-
-//   scrollLeftBtn.onclick = function () {
-//     slider.style.background = "red";
-//     console.log('works')
-//   }
-
-//   scrollRightBtn.onclick = function () {
-//     sliderContent.style.background = "yellow";
-//     console.log('works')
-//   }
-//   // var hideMenu = function () {
-//   //   if (header) {
-//   //     if (header.classList.contains('page-header--no-js')) {
-//   //       header.classList.remove('page-header--no-js')
-//   //     };
-//   //     if (header.classList.contains('page-header--nav-open')) {
-//   //       header.classList.remove('page-header--nav-open');
-//   //       header.classList.add('page-header--nav-closed');
-//   //     };
-//   //   }
-//   // };
-
-//   // var toggleMenu = function () {
-//   //   header.classList.toggle('page-header--nav-open');
-//   //   header.classList.toggle('page-header--nav-closed');
-//   // };
-
-//   // hideMenu();
-//   // menuToggle.addEventListener('click', toggleMenu);
-// })();
-
-// при изменении ширины окна позишн минус слайд Видтх пока реузльтат больше нуля. позишен = позишен минус остаток
+})();
 
 'use strict';
 
@@ -597,7 +362,7 @@ if (document.querySelector('.slider__wrapper')) {
       body.classList.add('js-no-scroll');
     }
 
-    body.style = `margin-left: -${shift}px`;
+    body.style = 'margin-left: ' + -shift + 'px';
 
     if (el) {
       el.classList.add('js-display-block');
@@ -611,7 +376,7 @@ if (document.querySelector('.slider__wrapper')) {
 
     if (body.offsetHeight > window.innerHeight) {
       body.classList.remove('js-no-scroll');
-      document.body.style = "margin-left: 0";
+      document.body.style = 'margin-left: 0';
 
       HTML.style.scrollBehavior = 'auto';
       HTML.style.scrollBehavior = 'smooth';

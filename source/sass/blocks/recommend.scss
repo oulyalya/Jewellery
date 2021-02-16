@@ -1,5 +1,5 @@
 .recommend {
-  // max-width: 60%;
+  position: relative;
   padding-top: 13px;
   padding-bottom: 76px;
   text-align: center;
@@ -13,10 +13,4 @@
 .recommend h2 + a {
   @include link-subtitle;
   margin-bottom: 30px;
-}
-
-.recommend__card {
-  @include tablet {
-    max-width: 170px;
-  }
 }

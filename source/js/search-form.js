@@ -7,35 +7,35 @@
 
   var toggleBackground = function () {
     if (formsOnLightBg) {
-      formsOnLightBg.forEach((form) => {
+      formsOnLightBg.forEach(function (form) {
         var inputSearch = form.querySelector('input[type="search"]');
         var container = inputSearch.closest('.search-form__bg');
 
-        inputSearch.addEventListener('focus', () => {
+        inputSearch.addEventListener('focus', function () {
           container.classList.add('search-form__bg--on-light');
-        })
+        });
 
-        inputSearch.addEventListener('blur', () => {
+        inputSearch.addEventListener('blur', function () {
           container.classList.remove('search-form__bg--on-light');
-        })
-      })
+        });
+      });
     }
 
     if (formsOnDarkBg) {
-      formsOnDarkBg.forEach((form) => {
+      formsOnDarkBg.forEach(function (form) {
         var inputSearch = form.querySelector('input[type="search"]');
         var container = inputSearch.closest('.search-form__bg');
 
-        inputSearch.addEventListener('focus', () => {
+        inputSearch.addEventListener('focus', function () {
           container.classList.add('search-form__bg--on-dark');
-        })
+        });
 
-        inputSearch.addEventListener('blur', () => {
+        inputSearch.addEventListener('blur', function () {
           container.classList.remove('search-form__bg--on-dark');
-        })
-      })
+        });
+      });
     }
-  }
+  };
 
   toggleBackground();
 })();

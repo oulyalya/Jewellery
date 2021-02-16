@@ -7,10 +7,11 @@
   <meta name="keywords" content="jewellery, silver, gold, ring, neclace, earrings, stones, crystals">
   <meta name="description" content="Jewellery online shop">
   <title>Chjewellery</title>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
   <link rel="stylesheet" href="css/style.min.css">
-  <!-- <link rel="preload" href="fonts/cormorant-garamond-v9-latin-700.woff2" as="font"> -->
-  <!-- <link rel="preload" href="fonts/cormorant-garamond-v9-latin-italic.woff2" as="font"> -->
-  <!-- <link rel="preload" href="fonts/poppins-v15-latin-400.woff2" as="font"> -->
+  <link rel="preload" href="fonts/cormorant-garamond-v9-latin-700.woff2" as="font">
+  <link rel="preload" href="fonts/cormorant-garamond-v9-latin-italic.woff2" as="font">
+  <link rel="preload" href="fonts/poppins-v15-latin-400.woff2" as="font">
 </head>
 
 <body>
@@ -117,8 +118,8 @@
         <a href="catalog.html">Shop Now</a>
         <section class="slider">
           <div class="slider__wrapper">
-            <div class="slider__slides">
-              <article class="slider__card card card--slider">
+            <div class="swiper-wrapper">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -133,7 +134,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -148,7 +149,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -163,7 +164,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -178,7 +179,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -193,7 +194,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -208,7 +209,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -223,7 +224,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -238,7 +239,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -253,7 +254,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -268,7 +269,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -283,7 +284,7 @@
                   </div>
                 </a>
               </article>
-              <article class="slider__card card card--slider">
+              <article class="slider__card card card--slider swiper-slide">
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
@@ -300,16 +301,12 @@
               </article>
             </div>
           </div>
+
           <div class="slider__btns-wrapper">
             <button class="slider__btn slider__btn--previous" type="button"><span class="visually-hidden">Previous</span></button>
             <button class="slider__btn slider__btn--next" type="button"><span class="visually-hidden">Next</span></button>
           </div>
-          <div class="slider__pagination pagination">
-            <ul class="pagination__list">
-              <li class="pagination__item"><a class="pagination__link pagination__link--current" href="#">1</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
-              <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
-            </ul>
+          <div class="slider__pagination slider__pagination--main pagination">
           </div>
         </section>
       </div>
@@ -597,5 +594,4 @@
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 </body>
-
 </html>

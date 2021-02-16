@@ -1,6 +1,6 @@
 .pagination {
   position: relative;
-  z-index: 10;
+  z-index: 100;
   margin-left: auto;
   margin-right: auto;
   width: 75%;
@@ -17,22 +17,19 @@
 .pagination__item {
   min-width: 15px;
   margin: 0 4px;
+  color: $c_text-light;
+  outline: 0 none;
+  cursor: pointer;
 
   @include mobile {
     margin: 0 9px;
   }
 }
 
-.pagination__link {
-  display: block;
-  min-width: 15px;
-  color: $c_text-light;
-}
-
-.pagination__link:not(.pagination__link--current) {
+.pagination__item:not(.pagination__item--current) {
   @include hover-effect($c-main);
 }
 
-.pagination__link--current {
+.pagination__item--current {
   color: $c_text;
 }
