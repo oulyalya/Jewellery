@@ -5,12 +5,10 @@
   padding-top: 80px;
 
   @include tablet {
-    // position: static;
-    padding-top: 50px;
+    padding-top: 47px;
   }
 
   @include mobile {
-    // position: static;
     padding-top: 40px;
     padding-bottom: 50px;
   }
@@ -173,6 +171,7 @@
     min-width: 220px;
     margin-left: calc(var(--catalog-offset-margin) / 2);
     margin-right: calc(var(--catalog-offset-margin) / 2);
+    margin-bottom: 24px;
     flex-grow: 1;
     flex-shrink: 0;
   }

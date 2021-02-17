@@ -18,12 +18,16 @@
 
     var showTabPanel = function () {
       tabPanels.forEach(function (panel) {
-        panel.classList.contains(tabName) ? panel.classList.add('product__tab--current') : panel.classList.remove('product__tab--current');
+        if (panel.classList.contains(tabName)) {
+          panel.classList.add('product__tab--current');
+        } else {
+          panel.classList.remove('product__tab--current');
+        }
       });
-    }
+    };
 
     tabBtns.forEach(function (btn) {
-      btn.addEventListener('click', switchTabHandler)
+      btn.addEventListener('click', switchTabHandler);
     });
   }
 })();

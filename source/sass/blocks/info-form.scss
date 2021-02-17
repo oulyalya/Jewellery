@@ -35,10 +35,6 @@
   font-size: 14px;
 }
 
-.info-form--on-dark-bg .info-form input {
-  color: white;
-}
-
 .info-form--on-dark-bg input {
   color: white;
 }
@@ -47,7 +43,7 @@
   border-bottom: 1px solid white;
 }
 
-.info-form--on-light-bg .info-form input {
+.info-form--on-light-bg input {
   color: $c_text;
 }
 

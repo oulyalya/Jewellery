@@ -1,5 +1,5 @@
 .faq {
-  padding-top: 20px;
+  padding-top: 22px;
   padding-bottom: 30px;
 
   @include tablet {
@@ -7,13 +7,14 @@
   }
 
   @include mobile {
+    padding-top: 18px;
     padding-bottom: 0;
   }
 }
 
 .faq h2 {
   @include title-two;
-  margin-bottom: 52px;
+  margin-bottom: 50px;
 
   @include tablet {
     margin-top: 0;

@@ -84,7 +84,7 @@ gulp.task("html", function () {
 });
 
 gulp.task("jslibs", function () {
-  return gulp.src(["source/js/swiper.js", "source/js/svguse.js"])
+  return gulp.src("source/js/libs/*.js")
     .pipe(concat({ path: "vendor.js" }))
     .pipe(gulp.dest("build/js/"));
 });

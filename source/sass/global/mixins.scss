@@ -137,23 +137,19 @@
 }
 
 @mixin hover-svg($fill-color, $stroke-color) {
-  &:hover,
-  &:focus {
-    & svg {
-      transition: 0.3s ease-in-out;
-      outline: 0 none;
-      fill: $fill-color;
-      stroke: $stroke-color;
-    }
+  &:hover svg,
+  &:focus svg {
+    transition: 0.3s ease-in-out;
+    outline: 0 none;
+    fill: $fill-color;
+    stroke: $stroke-color;
   }
 
-  &:active {
-    & svg {
-      opacity: 0.8;
-      transition: 0.3s ease-in-out;
-      fill: $fill-color;
-      stroke: $stroke-color;
-    }
+  &:active svg {
+    opacity: 0.8;
+    transition: 0.3s ease-in-out;
+    fill: $fill-color;
+    stroke: $stroke-color;
   }
 }
 

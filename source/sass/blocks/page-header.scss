@@ -1,17 +1,24 @@
 .page-header {
   position: relative;
+  min-width: $mob-min;
   background-color: white;
 
-  @include desktop-only {
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: block;
-      width: 100vw;
-      height: 1px;
-      background-color: $c_line;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 1px;
+    background-color: $c_line;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
     }
   }
 }
@@ -19,16 +26,22 @@
 .page-header__top-wrapper {
   position: relative;
 
-  @include desktop-only {
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: block;
-      width: 100vw;
-      height: 1px;
-      background-color: $c_line;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 1px;
+    background-color: $c_line;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
     }
   }
 }
@@ -37,7 +50,7 @@
   @include flex(row);
   min-height: 126px;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 31px;
   padding-bottom: 30px;
 
   @include tablet {
@@ -56,16 +69,30 @@
 .page-header--main .page-header__top-container {
   min-height: 115px;
   padding-top: 20px;
+
+  @include tablet {
+    min-height: 125px;
+    padding-top: 52px;
+    padding-bottom: 49px;
+  }
+
+  @include mobile {
+    min-height: 93px;
+  }
 }
 
 
 .page-header__search {
-  display: none;
+  display: block;
+  width: 400px;
+  max-width: 40%;
 
-  @include desktop-only {
-    display: block;
-    width: 400px;
-    max-width: 40%;
+  @include tablet {
+    display: none;
+  }
+
+  @include mobile {
+    display: none;
   }
 }
 
@@ -77,12 +104,16 @@
 
   @include hover-opacity;
   cursor: pointer;
-
-  @include desktop-only {
-    display: none;
-  }
+  display: none;
 
   @include tablet {
+    display: block;
+    width: 30px;
+    height: 25px;
+  }
+
+  @include mobile {
+    display: block;
     width: 30px;
     height: 25px;
   }
@@ -90,14 +121,14 @@
 
 .page-header__nav-toggle-icon {
   @include tablet {
-    width: 30px;
-    height: 16px;
+    width: 35px;
+    height: 20px;
     stroke: $c_text;
   }
 
   @include mobile {
-    width: 25px;
-    height: 16px;
+    width: 35px;
+    height: 20px;
     stroke: $c_text;
   }
 }
@@ -137,8 +168,14 @@
 }
 
 .page-header__user {
-  @include desktop-only {
-    max-width: 40%;
+  max-width: 40%;
+
+  @include tablet {
+    max-width: none;
+  }
+
+  @include mobile {
+    max-width: none;
   }
 }
 
@@ -218,16 +255,17 @@
 
   @include tablet {
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 23px;
+    height: 23px;
+    margin-top: -10px;
     fill: transparent;
     stroke: $c_text;
   }
 
   @include mobile {
     display: block;
-    width: 20px;
-    height: 18px;
+    width: 23px;
+    height: 23px;
     fill: transparent;
     stroke: $c_text;
   }

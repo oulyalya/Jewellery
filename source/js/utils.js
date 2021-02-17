@@ -11,10 +11,12 @@
     }
 
     body.style = 'margin-left: ' + -shift + 'px';
+    HTML.style.scrollBehavior = 'auto';
 
     if (el) {
       el.classList.add('js-display-block');
     }
+
   };
 
   var hideModal = function (el) {
@@ -24,10 +26,8 @@
 
     if (body.offsetHeight > window.innerHeight) {
       body.classList.remove('js-no-scroll');
-      document.body.style = 'margin-left: 0';
-
-      HTML.style.scrollBehavior = 'auto';
-      HTML.style.scrollBehavior = 'smooth';
+      document.body.style = 'margin-left: ""';
+      HTML.style.scrollBehavior = '';
     }
   };
 

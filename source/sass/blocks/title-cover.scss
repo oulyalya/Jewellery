@@ -1,7 +1,8 @@
 .title-cover {
-  min-height: 260px;
-  padding-top: 60px;
-  padding-bottom: 50px;
+  min-width: $mob-min;
+  min-height: 261px;
+  padding-top: 65px;
+  padding-bottom: 55px;
   background-color: $c_main;
 
   @include mobile {
@@ -21,7 +22,7 @@
   }
 
   @include mobile {
-    padding-top: 160px;
+    padding-top: 155px;
   }
 }
 
@@ -52,6 +53,10 @@
   @include title-two;
   letter-spacing: normal;
   color: white;
+
+  @include tablet {
+    margin-bottom: 15px;
+  }
 }
 
 .title-cover--main h2 {

@@ -7,7 +7,6 @@
   <meta name="keywords" content="jewellery, silver, gold, ring, neclace, earrings, stones, crystals">
   <meta name="description" content="Jewellery online shop">
   <title>Chjewellery</title>
-  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="preload" href="fonts/cormorant-garamond-v9-latin-700.woff2" as="font">
   <link rel="preload" href="fonts/cormorant-garamond-v9-latin-italic.woff2" as="font">
@@ -26,13 +25,14 @@
               <svg preserveAspectRatio="xMidYMid" width="14" height="14">
                 <use xlink:href="img/sprite_auto.svg#icon-search"></use>
               </svg>
-              <input type="search" placeholder="Type here to search">
+              <label class="visually-hidden" for="header-search">Search the website</label>
+              <input type="search" id="header-search" placeholder="Type here to search">
             </div>
           </form>
         </div>
         <button class="page-header__nav-toggle" id="main-nav-toggle">
           <span class="visually-hidden">Show/hide menu</span>
-          <svg class="page-header__nav-toggle-icon" viewbox="0 0 27 20" preserveAspectRatio="xMidYMid" width="25" height="16">
+          <svg class="page-header__nav-toggle-icon" viewbox="0 0 35 20" preserveAspectRatio="xMidYMid" width="27" height="16">
             <use xlink:href="img/sprite_auto.svg#icon-hamburger"></use>
           </svg>
         </button>
@@ -50,7 +50,7 @@
             </li>
             <li class="page-header__user-item">
               <a class="page-header__user-link page-header__user-link--cart" href="#"><span>Cart 0</span>
-                <svg class="page-header__user-link-icon page-header__user-link-icon--cart" preserveAspectRatio="xMidYMid" width="18" height="16" viewbox="0 0 22 20">
+                <svg class="page-header__user-link-icon page-header__user-link-icon--cart" viewbox="0 0 30 30" preserveAspectRatio="xMidYMid" width="18" height="16">
                   <use xlink:href="img/sprite_auto.svg#icon-cart"></use>
                 </svg>
               </a>
@@ -66,7 +66,8 @@
             <svg preserveAspectRatio="xMidYMid" width="14" height="14">
               <use xlink:href="img/sprite_auto.svg#icon-search"></use>
             </svg>
-            <input type="search">
+            <label class="visually-hidden" for="nav-search">Search the website</label>
+            <input type="search" id="nav-search">
           </div>
         </form>
 
@@ -377,7 +378,7 @@
             </div>
             <div class="accordion__item-content">
               Our jewellerry is made of solid&nbsp;gold, silver or leather. Also,&nbsp;some jewellery&nbsp;contains
-              precious and semiprecious stones&nbsp;nd crystals.
+              precious and semiprecious stones&nbsp;and crystals.
             </div>
           </div>
           <div class="accordion__item">
@@ -478,7 +479,7 @@
     </section>
   </main>
 
-  <div class="overlay" id="overlay-login">
+  <div class="overlay overlay--transparent" id="overlay-login">
     <div class="popup js-modal">
       <section class="login">
         <form class="login__form info-form info-form--on-light-bg" action="#" method="POST">
@@ -488,7 +489,7 @@
             <input class="js-email" type="email" id="login-email" placeholder="Your E-mail" required="">
           </div>
           <div>
-            <label class="visually-hidden" for="login-email">Enter your password</label>
+            <label class="visually-hidden" for="login-password">Enter your password</label>
             <input class="js-password" type="password" id="login-password" placeholder="Password" required="">
           </div>
           <a class="login__forgot-password" href="#">Forgot your password?</a>

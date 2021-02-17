@@ -15,8 +15,9 @@
 }
 
 .pagination__item {
-  min-width: 15px;
-  margin: 0 4px;
+  min-width: 12px;
+  margin: 0 6px;
+  font-size: 17px;
   color: $c_text-light;
   outline: 0 none;
   cursor: pointer;

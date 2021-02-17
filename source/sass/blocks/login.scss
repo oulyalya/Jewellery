@@ -25,6 +25,10 @@
   @include retina {
     background-image: url("../img/bg-login-form@2x.jpg");
   }
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .login__form h2 {

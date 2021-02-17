@@ -25,7 +25,8 @@
               <svg preserveAspectRatio="xMidYMid" width="14" height="14">
                 <use xlink:href="img/sprite_auto.svg#icon-search"></use>
               </svg>
-              <input type="search" placeholder="Type here to search">
+              <label class="visually-hidden" for="header-search">Search the website</label>
+              <input type="search" id="header-search" placeholder="Type here to search">
             </div>
           </form>
         </div>
@@ -68,7 +69,8 @@
             <svg preserveAspectRatio="xMidYMid" width="14" height="14">
               <use xlink:href="img/sprite_auto.svg#icon-search"></use>
             </svg>
-            <input type="search">
+            <label class="visually-hidden" for="nav-search">Search the website</label>
+            <input type="search" id="nav-search">
           </div>
         </form>
 
@@ -216,6 +218,7 @@
                 <a href="product.html">
                   <div class="card__img-wrapper card__img-wrapper--height">
                     <picture>
+                      <!-- 1х: 270px; 2x: 540px -->
                       <source type="image/webp" srcset="img/img-item-13@1x.webp 1x, img/img-item-13@2x.webp 2x">
                       <!-- 1х: 270px; 2x: 540px -->
                       <img src="img/img-item-13@1x.jpg"
@@ -406,7 +409,7 @@
 
   </main>
 
-  <div class="overlay" id="overlay-login">
+  <div class="overlay overlay--transparent" id="overlay-login">
     <div class="popup js-modal">
       <section class="login">
         <form class="login__form info-form info-form--on-light-bg" action="#" method="POST">
@@ -416,7 +419,7 @@
             <input class="js-email" type="email" id="login-email" placeholder="Your E-mail" required>
           </div>
           <div>
-            <label class="visually-hidden" for="login-email">Enter your password</label>
+            <label class="visually-hidden" for="login-password">Enter your password</label>
             <input class="js-password" type="password" id="login-password" placeholder="Password" required>
           </div>
           <a class="login__forgot-password" href="#">Forgot your password?</a>
