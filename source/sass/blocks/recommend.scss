@@ -3,6 +3,11 @@
   padding-top: 13px;
   padding-bottom: 76px;
   text-align: center;
+
+  @include tablet {
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
 }
 
 .recommend h2 {

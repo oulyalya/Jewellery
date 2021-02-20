@@ -6,18 +6,25 @@
     var openLoginModalBtns = document.querySelectorAll('.js-login');
 
     var overlay = document.querySelector('#overlay-login');
-    var closeLoginModalBtn = overlay.querySelector('.js-close');
-    var form = overlay.querySelector('form');
-    var userEmail = form.querySelector('.js-email');
-    var userPassword = form.querySelector('.js-password');
 
     var isStorageSupport = true;
     var storage = '';
+
+    if (document.querySelector('#overlay-login form')) {
+      var closeLoginModalBtn = overlay.querySelector('.js-close');
+      var form = overlay.querySelector('form');
+      var userEmail = form.querySelector('.js-email');
+      var userPassword = form.querySelector('.js-password');
+    }
 
     var showLoginModalHandler = function (evt) {
       evt.preventDefault();
 
       window.utils.showModal(overlay);
+
+      if (storage) {
+        userEmail.value = localStorage.getItem('email');
+      }
 
       if (userEmail.value) {
         userPassword.focus();
@@ -61,10 +68,6 @@
       storage = localStorage.getItem('email');
     } catch (err) {
       isStorageSupport = false;
-    }
-
-    if (storage) {
-      userEmail.value = localStorage.getItem('email');
     }
 
     openLoginModalBtns.forEach(function (btn) {

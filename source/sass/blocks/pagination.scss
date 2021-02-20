@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-.pagination__item {
+.pagination__list li {
   min-width: 12px;
   margin: 0 6px;
   font-size: 17px;
@@ -27,10 +27,27 @@
   }
 }
 
-.pagination__item:not(.pagination__item--current) {
+.pagination__list li:not(.pagination__current-page) {
   @include hover-effect($c-main);
 }
 
-.pagination__item--current {
+.pagination__list-item {
+  min-width: 12px;
+  margin: 0 6px;
+  font-size: 17px;
+  color: $c_text-light;
+  outline: 0 none;
+  cursor: pointer;
+
+  @include mobile {
+    margin: 0 9px;
+  }
+}
+
+.pagination__list .pagination__current-page {
+  color: $c_text;
+}
+
+.pagination__list-item .pagination__current-page {
   color: $c_text;
 }

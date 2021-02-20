@@ -2,7 +2,7 @@
 
 (function () {
   var accordionBlocks = document.querySelectorAll('.accordion__item');
-  var accordionBlockHeaders = document.querySelectorAll('.accordion__item-header');
+  var accordionBlockHeaders = document.querySelectorAll('.accordion__item div');
 
   var hideBlocks = function (blocks) {
     blocks.forEach(function (item) {

@@ -2,7 +2,7 @@
 
 (function () {
   if (document.querySelector('.slider')) {
-    new Swiper('.slider__wrapper', {
+    var slider = new window.Swiper('.slider__wrapper', {
       navigation: {
         nextEl: '.slider__btn--next',
         prevEl: '.slider__btn--previous',
@@ -13,10 +13,9 @@
         renderBullet: function (index, bulletClass) {
           return '<span class="' + bulletClass + '">' + (index + 1) + '</span>';
         },
-        bulletClass: 'pagination__item',
-        bulletActiveClass: 'pagination__item--current',
+        bulletClass: 'pagination__list-item',
+        bulletActiveClass: 'pagination__current-page',
         clickable: true,
-
       },
 
       breakpoints: {
@@ -47,5 +46,7 @@
       spaceBetween: 30,
       loop: true,
     });
+
+    slider.setGrabCursor();
   }
 })();

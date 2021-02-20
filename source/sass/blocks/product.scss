@@ -3,6 +3,7 @@
 
   @include tablet {
     padding-top: 30px;
+    padding-bottom: 25px;
   }
 }
 
@@ -22,7 +23,6 @@
 
 .product__photos-wrapper {
   @include flex(row);
-  // width: auto;
   max-width: 600px;
   flex-basis: calc(100% - (var(--description_width_dt) + 2 * var(--min_gap)));
   width: calc(100% - (var(--description_width_dt) + 2 * var(--min_gap)));
@@ -215,6 +215,8 @@
   @include mobile {
     height: 100%;
     width: auto;
+    min-width: 0;
+    max-width: 100%;
   }
 }
 
@@ -264,6 +266,10 @@
 
 .product__tab {
   display: none;
+  font-size: 14px;
+}
+
+.product__tab p {
   font-size: 14px;
 }
 
@@ -343,7 +349,7 @@
   }
 }
 
-.product button {
+.product__description a {
   margin-top: auto;
   margin-bottom: 20px;
 

@@ -62,7 +62,7 @@
   height: 25px;
 }
 
-.double-range__min-price {
+.double-range label:nth-of-type(2n+1) {
   position: absolute;
   left: 18.5%;
   top: 0;
@@ -71,7 +71,7 @@
   flex-wrap: nowrap;
 }
 
-.double-range__max-price {
+.double-range label:nth-of-type(2n) {
   position: absolute;
   left: 70%;
   top: 0;

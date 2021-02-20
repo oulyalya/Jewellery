@@ -50,7 +50,7 @@
   }
 }
 
-.social__link-title {
+.social__link span {
   @include mobile {
     display: none;
   }

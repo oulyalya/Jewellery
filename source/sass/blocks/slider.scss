@@ -10,8 +10,6 @@
   margin-left: auto;
   margin-right: auto;
   width: auto;
-  // max-width: 100%;
-  //   outline: 1px solid blue;
 }
 
 .slider__wrapper {
@@ -19,16 +17,12 @@
 }
 
 .slider__slides {
-  // position: relative;
   display: flex;
   flex-wrap: nowrap;
-  outline: 3px solid orange;
   height: max-content;
   width: auto;
   max-width: 100%;
   transition: all 0.5s ease-in-out;
-  // max-width: 300px;
-  // max-width: 1000px;
 }
 
 .slider__card {
@@ -38,6 +32,7 @@
   max-width: calc((100% - (3 * var(--margin))) / 4);
   width: auto;
   height: max-content;
+  margin-right: 0;
 
   @include tablet {
     min-width: calc(50% - (var(--margin) / 2));
@@ -97,7 +92,6 @@
 }
 
 .slider__pagination {
-  // background-color: rgba(red, 0.5);
   margin-top: 36px;
   margin-bottom: 30px;
 
