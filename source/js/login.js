@@ -13,8 +13,8 @@
     if (document.querySelector('#overlay-login form')) {
       var closeLoginModalBtn = overlay.querySelector('.js-close');
       var form = overlay.querySelector('form');
-      var userEmail = form.querySelector('.js-email');
-      var userPassword = form.querySelector('.js-password');
+      var userEmail = form.querySelector('input[type="email"]');
+      var userPassword = form.querySelector('input[type="password"]');
     }
 
     var showLoginModalHandler = function (evt) {

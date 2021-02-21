@@ -7,12 +7,14 @@
     var tabPanels = document.querySelectorAll('.product__tab');
     var tabName;
 
-    var switchTabHandler = function () {
+    var switchTabHandler = function (evt) {
+      var targetBtn = evt.target.closest('.product__tab-btn');
+
       tabBtns.forEach(function (btn) {
         btn.classList.remove('product__tab-btn--current');
       });
-      this.classList.add('product__tab-btn--current');
-      tabName = this.getAttribute('data-tab-name');
+      targetBtn.classList.add('product__tab-btn--current');
+      tabName = targetBtn.getAttribute('data-tab-name');
       showTabPanel();
     };
 

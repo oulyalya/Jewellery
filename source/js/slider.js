@@ -11,7 +11,7 @@
       pagination: {
         el: '.slider__pagination',
         renderBullet: function (index, bulletClass) {
-          return '<span class="' + bulletClass + '">' + (index + 1) + '</span>';
+          return '<li class="' + bulletClass + '">' + (index + 1) + '</li>';
         },
         bulletClass: 'pagination__list-item',
         bulletActiveClass: 'pagination__current-page',
@@ -23,7 +23,10 @@
           slidesPerView: 2,
           slidesPerGroup: 2,
           pagination: {
-            type: 'fraction',
+            type: 'custom',
+            renderCustom: function (swiper, current, total) {
+              return current + '  of  ' + (total);
+            },
           },
         },
         768: {
@@ -41,6 +44,10 @@
             type: 'bullets',
           },
         },
+      },
+
+      lazy: {
+        loadPrevNext: true,
       },
 
       spaceBetween: 30,

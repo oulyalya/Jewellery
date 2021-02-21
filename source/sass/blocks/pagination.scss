@@ -15,6 +15,9 @@
 }
 
 .pagination__list li {
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
   min-width: 12px;
   margin: 0 6px;
   font-size: 17px;
@@ -25,13 +28,12 @@
   @include mobile {
     margin: 0 9px;
   }
-}
-
-.pagination__list li:not(.pagination__current-page) {
-  @include hover-effect($c-main);
 }
 
 .pagination__list-item {
+  list-style: none;
+  display: inline-block;
+  vertical-align: middle;
   min-width: 12px;
   margin: 0 6px;
   font-size: 17px;
@@ -44,10 +46,18 @@
   }
 }
 
-.pagination__list .pagination__current-page {
+.pagination__list li.pagination__current-page {
   color: $c_text;
 }
 
-.pagination__list-item .pagination__current-page {
+.pagination__list-item.pagination__current-page {
   color: $c_text;
+}
+
+.pagination__list li:not(.pagination__current-page):hover {
+  color: $c_main;
+}
+
+.pagination__list-item:not(.pagination__current-page):hover {
+  color: $c_main;
 }

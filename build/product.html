@@ -8,9 +8,9 @@
   <meta name="description" content="Jewellery online shop">
   <title>Chjewellery</title>
   <link rel="stylesheet" href="css/style.min.css">
-  <link rel="preload" href="fonts/cormorant-garamond-v9-latin-700.woff2" as="font">
-  <link rel="preload" href="fonts/cormorant-garamond-v9-latin-italic.woff2" as="font">
-  <link rel="preload" href="fonts/poppins-v15-latin-400.woff2" as="font">
+  <!-- <link rel="preload" href="fonts/cormorant-garamond-v9-latin-700.woff2" as="font"> -->
+  <!-- <link rel="preload" href="fonts/cormorant-garamond-v9-latin-italic.woff2" as="font"> -->
+  <!-- <link rel="preload" href="fonts/poppins-v15-latin-400.woff2" as="font"> -->
 </head>
 
 <body>
@@ -142,6 +142,9 @@
               <!-- 1х: 470px; 2x: 940px -->
               <img src="img/img-product-01@1x.jpg" alt="Beautiful gold chain necklace" width="470" height="435" srcset="img/img-product-01@2x.jpg 2x" loading="lazy">
             </picture>
+          </div>
+          <div class="product__photo-number">
+            <p>1 of 4</p>
           </div>
         </div>
         <div class="product__description-wrapper">
@@ -405,14 +408,14 @@
     <div class="popup js-modal">
       <section class="login">
         <form class="login__form info-form info-form--on-light-bg" action="#" method="POST">
-          <h1>Log In</h1>
+          <h2>Log In</h2>
           <div>
             <label class="visually-hidden" for="login-email">Enter your email</label>
-            <input class="js-email" type="email" id="login-email" placeholder="Your E-mail" required="">
+            <input type="email" id="login-email" placeholder="Your E-mail" required="">
           </div>
           <div>
             <label class="visually-hidden" for="login-password">Enter your password</label>
-            <input class="js-password" type="password" id="login-password" placeholder="Password" required="">
+            <input type="password" id="login-password" placeholder="Password" required="">
           </div>
           <a class="login__forgot-password" href="#">Forgot your password?</a>
           <button class="btn js-submit" type="submit">Log In</button>
@@ -431,9 +434,10 @@
         <div class="added-to-cart__item">
           <a href="product.html">
             <picture>
-              <source type="image/webp" srcset="img/img-product-01@1x.webp 1x, img/img-product-01@2x.webp 2x">
               <!-- 1х: 470px; 2x: 940px -->
-              <img src="img/img-product-01@1x.jpg" alt="Beautiful gold chain necklace" width="88" height="79" srcset="img/img-product-01@2x.jpg 2x" loading="lazy">
+              <source type="image/webp" srcset="img/img-added-to-cart@1x.webp 1x, img/img-added-to-cart@2x.webp 2x">
+              <!-- 1х: 470px; 2x: 940px -->
+              <img src="img/img-added-to-cart@1x.jpg" alt="Beautiful gold chain necklace" width="88" height="79" srcset="img/img-added-to-cart@2x.jpg 2x" loading="lazy">
             </picture>
             <div>
               <h2>Gold Necklace</h2>
@@ -558,4 +562,5 @@
   <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

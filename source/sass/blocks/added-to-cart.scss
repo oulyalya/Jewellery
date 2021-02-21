@@ -5,6 +5,12 @@
   margin-right: auto;
   padding: 30px 35px 55px;
   background-color: white;
+
+  @include mobile {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .added-to-cart__item {
@@ -68,6 +74,10 @@
   position: absolute;
   top: 11.5px;
   right: 11.5px;
+
+  @include mobile {
+    right: 25px;
+  }
 }
 
 .added-to-cart__quantity-wrapper {

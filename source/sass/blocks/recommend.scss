@@ -8,6 +8,11 @@
     padding-top: 0;
     padding-bottom: 10px;
   }
+
+  @include mobile {
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
 }
 
 .recommend h2 {
@@ -18,4 +23,8 @@
 .recommend h2 + a {
   @include link-subtitle;
   margin-bottom: 30px;
+
+  @include mobile {
+    margin-bottom: 10px;
+  }
 }

@@ -11,6 +11,10 @@
 
   @include hover-effect(white);
 
+  @include mobile {
+    font-size: 14px;
+  }
+
   &:hover,
   &:focus,
   &:active {

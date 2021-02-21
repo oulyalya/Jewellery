@@ -2,14 +2,14 @@
 
 (function () {
   var body = document.querySelector('body');
-  var shift = window.innerWidth - document.body.offsetWidth;
+  // var shift = window.innerWidth - document.body.offsetWidth;
 
   var showModal = function (el) {
     if (body.offsetHeight > window.innerHeight) {
       body.classList.add('js-no-scroll');
     }
 
-    body.style = 'margin-left: ' + -shift + 'px';
+    // body.style = 'margin-left: ' + -shift + 'px';
 
     if (el) {
       el.classList.add('js-display-block');
@@ -24,7 +24,7 @@
 
     if (body.offsetHeight > window.innerHeight) {
       body.classList.remove('js-no-scroll');
-      document.body.style = 'margin-left: ""';
+      // document.body.style = 'margin-left: ""';
     }
   };
 

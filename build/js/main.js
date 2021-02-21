@@ -141,8 +141,8 @@
     if (document.querySelector('#overlay-login form')) {
       var closeLoginModalBtn = overlay.querySelector('.js-close');
       var form = overlay.querySelector('form');
-      var userEmail = form.querySelector('.js-email');
-      var userPassword = form.querySelector('.js-password');
+      var userEmail = form.querySelector('input[type="email"]');
+      var userPassword = form.querySelector('input[type="password"]');
     }
 
     var showLoginModalHandler = function (evt) {
@@ -241,12 +241,14 @@
     var tabPanels = document.querySelectorAll('.product__tab');
     var tabName;
 
-    var switchTabHandler = function () {
+    var switchTabHandler = function (evt) {
+      var targetBtn = evt.target.closest('.product__tab-btn');
+
       tabBtns.forEach(function (btn) {
         btn.classList.remove('product__tab-btn--current');
       });
-      this.classList.add('product__tab-btn--current');
-      tabName = this.getAttribute('data-tab-name');
+      targetBtn.classList.add('product__tab-btn--current');
+      tabName = targetBtn.getAttribute('data-tab-name');
       showTabPanel();
     };
 
@@ -321,7 +323,7 @@
       pagination: {
         el: '.slider__pagination',
         renderBullet: function (index, bulletClass) {
-          return '<span class="' + bulletClass + '">' + (index + 1) + '</span>';
+          return '<li class="' + bulletClass + '">' + (index + 1) + '</li>';
         },
         bulletClass: 'pagination__list-item',
         bulletActiveClass: 'pagination__current-page',
@@ -333,7 +335,10 @@
           slidesPerView: 2,
           slidesPerGroup: 2,
           pagination: {
-            type: 'fraction',
+            type: 'custom',
+            renderCustom: function (swiper, current, total) {
+              return current + '  of  ' + (total);
+            },
           },
         },
         768: {
@@ -353,6 +358,10 @@
         },
       },
 
+      lazy: {
+        loadPrevNext: true,
+      },
+
       spaceBetween: 30,
       loop: true,
     });
@@ -365,14 +374,14 @@
 
 (function () {
   var body = document.querySelector('body');
-  var shift = window.innerWidth - document.body.offsetWidth;
+  // var shift = window.innerWidth - document.body.offsetWidth;
 
   var showModal = function (el) {
     if (body.offsetHeight > window.innerHeight) {
       body.classList.add('js-no-scroll');
     }
 
-    body.style = 'margin-left: ' + -shift + 'px';
+    // body.style = 'margin-left: ' + -shift + 'px';
 
     if (el) {
       el.classList.add('js-display-block');
@@ -387,7 +396,7 @@
 
     if (body.offsetHeight > window.innerHeight) {
       body.classList.remove('js-no-scroll');
-      document.body.style = 'margin-left: ""';
+      // document.body.style = 'margin-left: ""';
     }
   };
 
